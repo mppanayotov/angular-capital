@@ -2,7 +2,11 @@
   "name": "@capital/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run-many -t serve --host 0.0.0.0 --parallel=3",
+    "dep-graph": "nx dep-graph --watch",
+    "build": "nx run-many -t build --parallel=3"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~16.0.0",
