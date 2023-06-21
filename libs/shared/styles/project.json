@@ -1,0 +1,20 @@
+{
+  "name": "shared-styles",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/styles/src",
+  "prefix": "capital",
+  "tags": ["scope:shared", "type:styles"],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/styles/**/*.ts",
+          "libs/shared/styles/**/*.html"
+        ]
+      }
+    }
+  }
+}
