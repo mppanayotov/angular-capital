@@ -1,11 +1,15 @@
 <div class="record-list-page">
   <div class="shell">
-    <mat-form-field>
-      <mat-label>Type to filter the table</mat-label>
-      <input matInput (keyup)="applyFilter($event)" #filter />
-      <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
-
+    <div class="record-list-page__head">
+      <button mat-fab color="primary" (click)="openAddDialog()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <mat-form-field>
+        <mat-label>Type to filter the table</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #filter />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
     <table mat-table matSort [dataSource]="dataSource" aria-label="Record list">
       <!-- Name Column -->
       <ng-container matColumnDef="name">
@@ -26,6 +30,14 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Actions</th>
         <td mat-cell *matCellDef="let row">
+          <button
+            mat-icon-button
+            color="primary"
+            aria-label="View record"
+            (click)="openViewDialog(row)"
+          >
+            <mat-icon>visibility</mat-icon>
+          </button>
           <button
             mat-icon-button
             color="primary"

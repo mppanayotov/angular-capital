@@ -1,0 +1,9 @@
+.dialog-delete-record {
+  width: 646px;
+  max-width: 100%;
+
+  .mat-mdc-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}

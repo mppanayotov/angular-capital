@@ -39,7 +39,19 @@ const reducer = createReducer(
   on(RecordsActions.loadRecordsFailure, (state, { error }) => ({
     ...state,
     error,
-  }))
+  })),
+  on(RecordsActions.loadRecordsSuccess, (state, { records }) =>
+    recordsAdapter.setAll(records, { ...state, loaded: true })
+  ),
+  on(RecordsActions.addRecord, (state, { record }) => {
+    return recordsAdapter.addOne(record, state);
+  }),
+  on(RecordsActions.updateRecord, (state, { record }) => {
+    return recordsAdapter.setOne(record, state);
+  }),
+  on(RecordsActions.removeRecord, (state, { recordId }) => {
+    return recordsAdapter.removeOne(recordId, state);
+  })
 );
 
 export function recordsReducer(

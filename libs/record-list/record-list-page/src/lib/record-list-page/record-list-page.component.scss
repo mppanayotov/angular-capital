@@ -1,12 +1,28 @@
 .record-list-page {
+  padding: 40px 0;
+
   table {
     background: none;
+    table-layout: fixed;
   }
   td {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: calc((100% - 180px) / 3);
   }
   mat-paginator {
     background: none;
+  }
+  .mat-column-actions {
+    text-align: center;
+    min-width: 180px;
+    width: 180px;
+  }
+  .mat-mdc-no-data-row td {
+    height: 65px;
+  }
+  .record-list-page__head {
+    display: flex;
+    justify-content: space-between;
   }
 }

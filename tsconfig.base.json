@@ -15,6 +15,18 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@capital/record-list/dialog-add-record": [
+        "libs/record-list/dialog-add-record/src/index.ts"
+      ],
+      "@capital/record-list/dialog-delete-record": [
+        "libs/record-list/dialog-delete-record/src/index.ts"
+      ],
+      "@capital/record-list/dialog-edit-record": [
+        "libs/record-list/dialog-edit-record/src/index.ts"
+      ],
+      "@capital/record-list/dialog-view-record": [
+        "libs/record-list/dialog-view-record/src/index.ts"
+      ],
       "@capital/record-list/record-list-page": [
         "libs/record-list/record-list-page/src/index.ts"
       ],
