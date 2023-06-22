@@ -10,6 +10,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { RecordsService } from './records.service';
+import { SharedRecordsModule } from '@capital/shared/records';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { RecordsService } from './records.service';
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
+    SharedRecordsModule,
   ],
   providers: [RecordsService],
   bootstrap: [AppComponent],

@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { RecordsEntity } from './records.models';
 
-export const initRecords = createAction('[Records Page] Init');
+export const initRecords = createAction('[Records] Init');
 
 export const loadRecordsSuccess = createAction(
   '[Records/API] Load Records Success',
@@ -15,16 +15,16 @@ export const loadRecordsFailure = createAction(
 );
 
 export const removeRecord = createAction(
-  '[SharedRecords] Remove Record',
+  '[Records] Remove Record',
   props<{ recordId: string }>()
 );
 
 export const addRecord = createAction(
-  '[SharedRecords] Add Record',
+  '[Records] Add Record',
   props<{ record: RecordsEntity }>()
 );
 
 export const updateRecord = createAction(
-  '[SharedRecords] Update Record',
+  '[Records] Update Record',
   props<{ record: RecordsEntity }>()
 );
