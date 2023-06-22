@@ -10,7 +10,7 @@
       phone: '+359 {{phone()}}',
       address:
         '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
-      salaray: '{{floating(1000, 4000, 2, "$0,0.00")}}'
+      salary: '{{floating(1000, 4000, 2, "$0,0.00")}}'
     }
   ]
 }

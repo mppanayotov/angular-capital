@@ -16,7 +16,7 @@ describe('Records Reducer', () => {
     email = '',
     phone = '',
     address = '',
-    salaray = ''
+    salary = ''
   ): RecordsEntity => ({
     id,
     name: name || `name-${id}`,
@@ -24,7 +24,7 @@ describe('Records Reducer', () => {
     email: email || `email-${id}`,
     phone: phone || `phone-${id}`,
     address: address || `address-${id}`,
-    salaray: salaray || `salaray-${id}`,
+    salary: salary || `salary-${id}`,
   });
 
   describe('valid Records actions', () => {

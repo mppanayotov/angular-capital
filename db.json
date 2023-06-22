@@ -7,7 +7,7 @@
       "email": "reesedejesus@plutorque.com",
       "phone": "+359 (976) 583-3934",
       "address": "228 Kathleen Court, Brutus, California, 1732",
-      "salaray": "$2,495.95"
+      "salary": "$2,495.95"
     },
     {
       "id": 1,
@@ -16,7 +16,7 @@
       "email": "baldwinhyde@codax.com",
       "phone": "+359 (858) 541-3220",
       "address": "417 Hampton Avenue, Calvary, Arkansas, 4141",
-      "salaray": "$1,033.87"
+      "salary": "$1,033.87"
     },
     {
       "id": 2,
@@ -25,7 +25,7 @@
       "email": "queenbentley@gazak.com",
       "phone": "+359 (844) 502-3466",
       "address": "933 Fleet Street, Geyserville, Colorado, 6709",
-      "salaray": "$1,096.82"
+      "salary": "$1,096.82"
     },
     {
       "id": 3,
@@ -34,7 +34,7 @@
       "email": "mcneiljoseph@equitox.com",
       "phone": "+359 (930) 448-3864",
       "address": "480 Rose Street, Waumandee, Utah, 9705",
-      "salaray": "$1,348.33"
+      "salary": "$1,348.33"
     },
     {
       "id": 4,
@@ -43,7 +43,7 @@
       "email": "sondrabrock@volax.com",
       "phone": "+359 (974) 482-3462",
       "address": "910 Keap Street, Holcombe, Delaware, 911",
-      "salaray": "$1,948.25"
+      "salary": "$1,948.25"
     },
     {
       "id": 5,
@@ -52,7 +52,7 @@
       "email": "oliviamerritt@zoarere.com",
       "phone": "+359 (996) 432-3347",
       "address": "187 Hope Street, Osage, Minnesota, 5714",
-      "salaray": "$3,135.09"
+      "salary": "$3,135.09"
     },
     {
       "id": 6,
@@ -61,7 +61,7 @@
       "email": "rosalindadunlap@fibrodyne.com",
       "phone": "+359 (996) 492-2671",
       "address": "325 Carlton Avenue, Walland, Maryland, 6543",
-      "salaray": "$2,038.01"
+      "salary": "$2,038.01"
     },
     {
       "id": 7,
@@ -70,7 +70,7 @@
       "email": "abbottphillips@steelfab.com",
       "phone": "+359 (815) 574-2245",
       "address": "181 Tudor Terrace, Staples, North Dakota, 7680",
-      "salaray": "$1,817.69"
+      "salary": "$1,817.69"
     },
     {
       "id": 8,
@@ -79,7 +79,7 @@
       "email": "leapugh@springbee.com",
       "phone": "+359 (919) 462-2825",
       "address": "757 Vandervoort Place, Ada, New Jersey, 347",
-      "salaray": "$1,103.56"
+      "salary": "$1,103.56"
     },
     {
       "id": 9,
@@ -88,7 +88,7 @@
       "email": "lucindaratliff@flumbo.com",
       "phone": "+359 (903) 536-3023",
       "address": "872 Nixon Court, Aurora, Missouri, 848",
-      "salaray": "$2,455.95"
+      "salary": "$2,455.95"
     }
   ]
 }

@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@capital/record-list/record-list-page": [
+        "libs/record-list/record-list-page/src/index.ts"
+      ],
       "@capital/shared/records": ["libs/shared/records/src/index.ts"],
       "@capital/shared/styles": ["libs/shared/styles/src/index.ts"]
     }

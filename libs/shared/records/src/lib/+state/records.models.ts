@@ -8,5 +8,5 @@ export interface RecordsEntity {
   email: string;
   phone: string;
   address: string;
-  salaray: string;
+  salary: string;
 }
