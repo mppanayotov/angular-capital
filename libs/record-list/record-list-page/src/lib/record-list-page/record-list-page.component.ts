@@ -34,7 +34,7 @@ export class RecordListPageComponent implements AfterViewInit {
           case 'department':
             return user.department;
           default:
-            return user.salary;
+            return -user.salary.replace(/[^0-9.-]+/g, '');
         }
       };
       this.dataSource.paginator = this.paginator;
@@ -51,11 +51,11 @@ export class RecordListPageComponent implements AfterViewInit {
     }
   }
 
-  openEditDialog(row: RecordListPageComponent): void {
+  openEditDialog(row: RecordsEntity): void {
     console.log('open edit', row);
   }
 
-  openDeleteDialog(row: RecordListPageComponent): void {
+  openDeleteDialog(row: RecordsEntity): void {
     console.log('open delete', row);
   }
 }
