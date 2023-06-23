@@ -4,11 +4,12 @@ $font-size-base: 14px;
 $font-weight-base: 400;
 $line-height-base: 1.3;
 
-$ff-sans-serif: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$ff-serif: Georgia, "Times New Roman", Times, serif;
+$ff-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$ff-serif: Georgia, 'Times New Roman', Times, serif;
 
 $shell-max-width: 1400px;
 $shell-gutter: 20px;
+$shell-gutter-mobile: 10px;
 
 $breakpoints: (
   mobile-small: 374px,

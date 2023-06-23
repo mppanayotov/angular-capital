@@ -2,19 +2,139 @@ table {
   background: none;
   table-layout: fixed;
 }
+th {
+  @media (max-width: 767px) {
+    display: inline-flex;
+    justify-content: center;
+    width: auto;
+    border-bottom: none;
+    padding-left: 0;
+    transition: opacity 0.3s ease-out;
+  }
+}
+th[aria-sort='none'] {
+  @media (max-width: 767px) {
+    opacity: 0.6;
+  }
+}
+th:nth-last-child(2) {
+  @media (max-width: 767px) {
+    padding-right: 0;
+  }
+}
+th:last-child {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
 td {
   padding-top: 8px;
   padding-bottom: 8px;
   width: calc((100% - 180px) / 3);
+
+  @media (max-width: 767px) {
+    position: relative;
+    padding: 4px 8px 4px 112px;
+    display: block;
+    width: 100%;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4px 8px;
+    display: none;
+    width: 112px;
+    content: attr(data-col);
+    font-weight: 500;
+    text-transform: capitalize;
+
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+}
+td:not(:last-child) {
+  @media (max-width: 767px) {
+    border-bottom: none;
+  }
+}
+td:last-child {
+  @media (max-width: 767px) {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+}
+tr {
+  @media (max-width: 767px) {
+    display: block;
+    height: auto !important;
+  }
+}
+button:nth-of-type(odd) {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+button:nth-of-type(even) {
+  display: none;
+  width: 100%;
+  margin-bottom: 6px;
+
+  @media (max-width: 767px) {
+    display: inline-flex;
+  }
 }
 mat-paginator {
   background: none;
+
+  @media (max-width: 767px) {
+    margin-top: 8px;
+  }
 }
+.mat-mdc-header-row {
+  @media (max-width: 767px) {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  &:before {
+    padding-right: 8px;
+    display: none;
+    content: 'Sort by: ';
+    font-weight: 500;
+    line-height: 22px;
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+}
+
 .mat-column-actions {
   text-align: center;
   min-width: 180px;
   width: 180px;
+
+  @media (max-width: 767px) {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
 }
 .mat-mdc-no-data-row td {
   height: 65px;
+  font-style: italic;
+
+  @media (max-width: 767px) {
+    height: auto;
+    padding: 4px 8px;
+  }
 }

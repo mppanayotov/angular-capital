@@ -1,8 +1,35 @@
 .record-list-page {
   padding: 40px 0;
 
+  @media (max-width: 767px) {
+    padding: 20px 0;
+  }
+
   .record-list-page__head {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+  button:first-of-type {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  button + button {
+    display: none;
+
+    @media (max-width: 767px) {
+      display: inline-flex;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+  mat-form-field {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
   }
 }
