@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatIconModule,
     MatPaginatorModule,
     MatButtonModule,
+    MatSortModule,
   ],
   declarations: [TableRecordsComponent],
   exports: [TableRecordsComponent],

@@ -9,7 +9,6 @@ import {
 } from '@capital/shared/records';
 import { Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
-import { MatTableDataSource } from '@angular/material/table';
 import { DialogAddRecordComponent } from '@capital/record-list/dialog-add-record';
 import { DialogDeleteRecordComponent } from '@capital/record-list/dialog-delete-record';
 import { DialogEditRecordComponent } from '@capital/record-list/dialog-edit-record';
@@ -23,7 +22,6 @@ import { DialogViewRecordComponent } from '@capital/record-list/dialog-view-reco
 export class RecordListPageComponent implements OnInit {
   records$ = this.store.select(selectAllRecords);
   records: RecordsEntity[] = [];
-  dataSource: MatTableDataSource<RecordsEntity> = new MatTableDataSource();
 
   constructor(private store: Store, private dialog: MatDialog) {}
 
