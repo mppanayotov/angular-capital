@@ -36,7 +36,7 @@ export class TableRecordsComponent implements OnChanges {
     changes['filter'] && this.applyFilter();
   }
 
-  updateDatasource() {
+  updateDatasource(): void {
     this.dataSource = new MatTableDataSource(this.records);
     this.dataSource.sortingDataAccessor = (record, property) => {
       switch (property) {
@@ -52,7 +52,7 @@ export class TableRecordsComponent implements OnChanges {
     this.dataSource.sort = this.sort;
   }
 
-  applyFilter() {
+  applyFilter(): void {
     this.dataSource.filter = this.filter.trim().toLowerCase();
 
     if (this.dataSource.paginator) {
@@ -60,15 +60,15 @@ export class TableRecordsComponent implements OnChanges {
     }
   }
 
-  openViewDialog(row: RecordsEntity) {
+  openViewDialog(row: RecordsEntity): void {
     this.openViewDialogEvent.emit(row);
   }
 
-  openEditDialog(row: RecordsEntity) {
+  openEditDialog(row: RecordsEntity): void {
     this.openEditDialogEvent.emit(row);
   }
 
-  openDeleteDialog(row: RecordsEntity) {
+  openDeleteDialog(row: RecordsEntity): void {
     this.openDeleteDialogEvent.emit(row);
   }
 }

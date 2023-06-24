@@ -12,6 +12,18 @@ export interface RecordsEntity {
 }
 
 /**
+ * Interface for the 'Records' data without existing ID
+ */
+export interface RecordsEntityWithoutId {
+  name: string;
+  department: string;
+  email: string;
+  phone: string;
+  address: string;
+  salary: string;
+}
+
+/**
  * Class for the 'Records' data
  */
 export class newRecordTemplate implements RecordsEntity {

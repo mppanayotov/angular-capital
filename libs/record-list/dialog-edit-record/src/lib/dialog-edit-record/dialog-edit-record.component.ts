@@ -24,7 +24,9 @@ export class DialogEditRecordComponent {
     @Inject(MAT_DIALOG_DATA) public data: RecordsEntity
   ) {}
 
-  getErrorMessage(field: FormControl) {
+  getErrorMessage(
+    field: FormControl
+  ): false | 'You must enter a value' | 'Not a valid email' | '' {
     if (field == this.form.controls.email) {
       if (this.form.controls.email.hasError('required')) {
         return 'You must enter a value';

@@ -8,6 +8,7 @@ import {
   updateRecord,
   loadRecordsSuccess,
   selectAllRecords,
+  RecordsEntityWithoutId,
 } from '@capital/shared/records';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -46,16 +47,16 @@ export class RecordsService {
     return this.store.select(selectAllRecords);
   }
 
-  addStoreRecord(newRecordData: RecordsEntity) {
+  addStoreRecord(newRecordData: RecordsEntityWithoutId): void {
     const newRecord = new newRecordTemplate(this.genId(), newRecordData);
     this.store.dispatch(addRecord({ record: newRecord }));
   }
 
-  updateStoreRecord(editRecordData: RecordsEntity) {
+  updateStoreRecord(editRecordData: RecordsEntity): void {
     this.store.dispatch(updateRecord({ record: editRecordData }));
   }
 
-  deleteStoreRecord(recordId: string) {
+  deleteStoreRecord(recordId: string): void {
     this.store.dispatch(removeRecord({ recordId }));
   }
 

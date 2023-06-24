@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecordsEntity } from '@capital/shared/records';
+import { RecordsEntity, RecordsEntityWithoutId } from '@capital/shared/records';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddRecordComponent } from '@capital/record-list/dialog-add-record';
 import { DialogDeleteRecordComponent } from '@capital/record-list/dialog-delete-record';
@@ -69,7 +69,7 @@ export class RecordListPageComponent implements OnInit {
     });
   }
 
-  onAdd(addDialogResult: RecordsEntity): void {
+  onAdd(addDialogResult: RecordsEntityWithoutId): void {
     this.recordsService.addStoreRecord(addDialogResult);
   }
 

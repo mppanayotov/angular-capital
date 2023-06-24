@@ -22,7 +22,9 @@ export class DialogAddRecordComponent {
     public dialogRef: MatDialogRef<DialogAddRecordComponent>
   ) {}
 
-  getErrorMessage(field: FormControl) {
+  getErrorMessage(
+    field: FormControl
+  ): false | 'You must enter a value' | '' | 'Not a valid email' {
     if (field == this.form.controls.email) {
       if (this.form.controls.email.hasError('required')) {
         return 'You must enter a value';
