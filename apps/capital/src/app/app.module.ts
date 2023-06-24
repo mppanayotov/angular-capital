@@ -9,8 +9,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
-import { RecordsService } from './records.service';
 import { SharedRecordsModule } from '@capital/shared/records';
+import { RecordsService } from '@capital/services/records-service';
 
 @NgModule({
   declarations: [AppComponent],

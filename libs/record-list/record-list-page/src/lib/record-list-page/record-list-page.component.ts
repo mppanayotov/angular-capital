@@ -1,18 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  RecordsEntity,
-  selectAllRecords,
-  addRecord,
-  removeRecord,
-  updateRecord,
-  newRecordTemplate,
-} from '@capital/shared/records';
-import { Store } from '@ngrx/store';
+import { RecordsEntity } from '@capital/shared/records';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddRecordComponent } from '@capital/record-list/dialog-add-record';
 import { DialogDeleteRecordComponent } from '@capital/record-list/dialog-delete-record';
 import { DialogEditRecordComponent } from '@capital/record-list/dialog-edit-record';
 import { DialogViewRecordComponent } from '@capital/record-list/dialog-view-record';
+import { RecordsService } from '@capital/services/records-service';
 
 @Component({
   selector: 'capital-record-list-page',
@@ -20,10 +13,13 @@ import { DialogViewRecordComponent } from '@capital/record-list/dialog-view-reco
   styleUrls: ['./record-list-page.component.scss'],
 })
 export class RecordListPageComponent implements OnInit {
-  records$ = this.store.select(selectAllRecords);
+  records$ = this.recordsService.selectAllStoreRecords();
   records: RecordsEntity[] = [];
 
-  constructor(private store: Store, private dialog: MatDialog) {}
+  constructor(
+    private recordsService: RecordsService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.records$.subscribe((records) => {
@@ -73,22 +69,15 @@ export class RecordListPageComponent implements OnInit {
     });
   }
 
-  onAdd(addDialogResult: RecordsEntity) {
-    const newRecord = new newRecordTemplate(this.genId(), addDialogResult);
-    this.store.dispatch(addRecord({ record: newRecord }));
+  onAdd(addDialogResult: RecordsEntity): void {
+    this.recordsService.addStoreRecord(addDialogResult);
   }
 
-  onEdit(editedRecord: RecordsEntity) {
-    this.store.dispatch(updateRecord({ record: editedRecord }));
+  onEdit(editedRecord: RecordsEntity): void {
+    this.recordsService.updateStoreRecord(editedRecord);
   }
 
-  onDelete(recordId: string) {
-    this.store.dispatch(removeRecord({ recordId }));
-  }
-
-  genId(): number {
-    return this.records.length > 0
-      ? Math.max(...this.records.map((record) => record.id)) + 1
-      : 1;
+  onDelete(recordId: string): void {
+    this.recordsService.deleteStoreRecord(recordId);
   }
 }

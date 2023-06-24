@@ -5,6 +5,7 @@ import {
   Input,
   Output,
   ViewChild,
+  SimpleChanges,
 } from '@angular/core';
 import { RecordsEntity } from '@capital/shared/records';
 import { MatPaginator } from '@angular/material/paginator';
@@ -30,9 +31,9 @@ export class TableRecordsComponent implements OnChanges {
 
   dataSource: MatTableDataSource<RecordsEntity> = new MatTableDataSource();
 
-  ngOnChanges(): void {
-    this.updateDatasource();
-    this.applyFilter();
+  ngOnChanges(changes: SimpleChanges): void {
+    changes['records'] && this.updateDatasource();
+    changes['filter'] && this.applyFilter();
   }
 
   updateDatasource() {

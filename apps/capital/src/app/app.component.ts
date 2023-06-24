@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { loadRecordsSuccess } from '@capital/shared/records';
-import { RecordsService } from './records.service';
+import { RecordsService } from '@capital/services/records-service';
 
 @Component({
   selector: 'capital-root',
@@ -11,13 +9,13 @@ import { RecordsService } from './records.service';
 export class AppComponent implements OnInit {
   title = 'capital';
 
-  constructor(private recordsService: RecordsService, private store: Store) {}
+  constructor(private recordsService: RecordsService) {}
 
   ngOnInit() {
     this.recordsService
       .getRecords()
       .subscribe((records) =>
-        this.store.dispatch(loadRecordsSuccess({ records }))
+        this.recordsService.loadStoreRecordsSuccess(records)
       );
   }
 }
