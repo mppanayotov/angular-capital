@@ -13,7 +13,7 @@ import { RecordsService } from '@capital/services/records-service';
   styleUrls: ['./record-list-page.component.scss'],
 })
 export class RecordListPageComponent implements OnInit {
-  records$ = this.recordsService.selectAllStoreRecords();
+  records$ = this.recordsService.selectAllRecords();
   records: RecordsEntity[] = [];
 
   constructor(
@@ -70,14 +70,14 @@ export class RecordListPageComponent implements OnInit {
   }
 
   onAdd(addDialogResult: RecordsEntityWithoutId): void {
-    this.recordsService.addStoreRecord(addDialogResult);
+    this.recordsService.addRecord(addDialogResult);
   }
 
   onEdit(editedRecord: RecordsEntity): void {
-    this.recordsService.updateStoreRecord(editedRecord);
+    this.recordsService.updateRecord(editedRecord);
   }
 
-  onDelete(recordId: string): void {
-    this.recordsService.deleteStoreRecord(recordId);
+  onDelete(recordId: number): void {
+    this.recordsService.deleteRecord(recordId);
   }
 }

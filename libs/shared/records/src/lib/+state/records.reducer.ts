@@ -40,9 +40,6 @@ const reducer = createReducer(
     ...state,
     error,
   })),
-  on(RecordsActions.loadRecordsSuccess, (state, { records }) =>
-    recordsAdapter.setAll(records, { ...state, loaded: true })
-  ),
   on(RecordsActions.addRecord, (state, { record }) => {
     return recordsAdapter.addOne(record, state);
   }),

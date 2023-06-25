@@ -12,10 +12,6 @@ export class AppComponent implements OnInit {
   constructor(private recordsService: RecordsService) {}
 
   ngOnInit() {
-    this.recordsService
-      .getRecords()
-      .subscribe((records) =>
-        this.recordsService.loadStoreRecordsSuccess(records)
-      );
+    this.recordsService.loadRecords();
   }
 }

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
   RecordsEntity,
@@ -11,35 +11,95 @@ import {
   RecordsEntityWithoutId,
 } from '@capital/shared/records';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecordsService {
-  constructor(private http: HttpClient, private store: Store) {}
-
+  private recordsUrl =
+    'https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/records'; // URL to web api
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
   storeRecords: RecordsEntity[] = [];
 
-  getRecords(): Observable<Array<RecordsEntity>> {
+  constructor(private http: HttpClient, private store: Store) {}
+
+  /** GET records from the server */
+  getRecordsFromServer(): Observable<Array<RecordsEntity>> {
+    return this.http.get<RecordsEntity[]>(this.recordsUrl).pipe(
+      tap(() => console.log('Fetched records from server')),
+      catchError(this.handleError<RecordsEntity[]>('getRecordsFromServer', []))
+    );
+  }
+
+  /** POST: add a new record to the server */
+  postRecordToServer(record: RecordsEntity): Observable<RecordsEntity> {
     return this.http
-      .get<RecordsEntity[]>(
-        'https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/records'
-      )
+      .post<RecordsEntity>(this.recordsUrl, record, this.httpOptions)
       .pipe(
-        tap(() => console.log('Fetched records from server')),
-        catchError((err) => {
-          throw 'Error in fethching records. Details: ' + err;
-        })
+        tap((newRecod: RecordsEntity) =>
+          console.log(`Added record w/ id=${newRecod.id}`)
+        ),
+        catchError(this.handleError<RecordsEntity>('postRecordToServer'))
       );
   }
 
-  loadStoreRecordsSuccess(records: RecordsEntity[]) {
+  /** PUT: update the record on the server */
+  putRecordOnServer(record: RecordsEntity): Observable<RecordsEntity> {
+    return this.http
+      .put<RecordsEntity>(this.recordsUrl, record, this.httpOptions)
+      .pipe(
+        tap(() => console.log(`Updated record id=${record.id}`)),
+        catchError(this.handleError<RecordsEntity>('putRecordOnServer'))
+      );
+  }
+
+  /** DELETE: delete the record from the server */
+  deleteRecordFromServer(id: number): Observable<RecordsEntity> {
+    const url = `${this.recordsUrl}/${id}`;
+
+    return this.http.delete<RecordsEntity>(url, this.httpOptions).pipe(
+      tap(() => console.log(`Deleted record id=${id}`)),
+      catchError(this.handleError<RecordsEntity>('deleteRecordFromServer'))
+    );
+  }
+
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   *
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T>(
+    operation = 'operation',
+    result?: T
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ): (error: any) => Observable<T> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (error: any): Observable<T> => {
+      console.error(error); // log to console
+      console.log(`${operation} failed: ${error.message}`);
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
+  loadStoreRecordsSuccess(records: RecordsEntity[]): void {
     this.store.dispatch(loadRecordsSuccess({ records }));
   }
 
-  selectAllStoreRecords(): Observable<RecordsEntity[]> {
+  loadRecords(): void {
+    this.getRecordsFromServer().subscribe((records) => {
+      this.loadStoreRecordsSuccess(records);
+      this.storeRecords = records;
+    });
+  }
+
+  selectAllRecords(): Observable<RecordsEntity[]> {
     this.store.select(selectAllRecords).subscribe((records) => {
       this.storeRecords = records;
     });
@@ -47,17 +107,20 @@ export class RecordsService {
     return this.store.select(selectAllRecords);
   }
 
-  addStoreRecord(newRecordData: RecordsEntityWithoutId): void {
+  addRecord(newRecordData: RecordsEntityWithoutId): void {
     const newRecord = new newRecordTemplate(this.genId(), newRecordData);
     this.store.dispatch(addRecord({ record: newRecord }));
+    this.putRecordOnServer(newRecord);
   }
 
-  updateStoreRecord(editRecordData: RecordsEntity): void {
-    this.store.dispatch(updateRecord({ record: editRecordData }));
+  updateRecord(editedRecord: RecordsEntity): void {
+    this.store.dispatch(updateRecord({ record: editedRecord }));
+    this.putRecordOnServer(editedRecord);
   }
 
-  deleteStoreRecord(recordId: string): void {
+  deleteRecord(recordId: number): void {
     this.store.dispatch(removeRecord({ recordId }));
+    this.deleteRecordFromServer(recordId);
   }
 
   genId(): number {

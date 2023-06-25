@@ -16,7 +16,7 @@ export const loadRecordsFailure = createAction(
 
 export const removeRecord = createAction(
   '[Records] Remove Record',
-  props<{ recordId: string }>()
+  props<{ recordId: number }>()
 );
 
 export const addRecord = createAction(
