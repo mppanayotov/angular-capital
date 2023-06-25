@@ -9,12 +9,18 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 })
 export class DialogAddRecordComponent {
   form = this.formBuilder.group({
-    name: ['', Validators.required],
+    name: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
     department: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    phone: ['', Validators.required],
+    phone: ['', [Validators.required, Validators.pattern('[0-9]*')]],
     address: ['', Validators.required],
-    salary: ['', Validators.required],
+    salary: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern('^[$€]?\\d+(\\,\\d{3})*(\\.\\d{1,2})?$'),
+      ],
+    ],
   });
 
   constructor(
@@ -22,19 +28,13 @@ export class DialogAddRecordComponent {
     public dialogRef: MatDialogRef<DialogAddRecordComponent>
   ) {}
 
-  getErrorMessage(
-    field: FormControl
-  ): false | 'You must enter a value' | '' | 'Not a valid email' {
-    if (field == this.form.controls.email) {
-      if (this.form.controls.email.hasError('required')) {
-        return 'You must enter a value';
-      }
-
-      return this.form.controls.email.hasError('email') && 'Not a valid email';
-    }
-
+  getErrorMessage(field: FormControl, fieldName: string) {
     if (field.hasError('required')) {
       return 'You must enter a value';
+    }
+
+    if (field.hasError('email') || field.hasError('pattern')) {
+      return `Not a valid ${fieldName}`;
     }
 
     return '';
