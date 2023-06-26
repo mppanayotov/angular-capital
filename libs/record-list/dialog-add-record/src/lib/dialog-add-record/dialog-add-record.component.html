@@ -1,76 +1,69 @@
-<div class="dialog-add-record">
-  <h1 mat-dialog-title>Add record</h1>
-  <div mat-dialog-content>
-    <form [formGroup]="form">
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Name" formControlName="name" required />
-        <mat-error *ngIf="form.controls.name.invalid">{{
-          getErrorMessage(form.controls.name, 'name')
-        }}</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Department</mat-label>
-        <input
-          matInput
-          placeholder="Department"
-          formControlName="department"
-          required
-        />
-        <mat-error *ngIf="form.controls.department.invalid">{{
-          getErrorMessage(form.controls.department, 'department')
-        }}</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" formControlName="email" required />
-        <mat-error *ngIf="form.controls.email.invalid">{{
-          getErrorMessage(form.controls.email, 'email')
-        }}</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Phone</mat-label>
-        <input matInput placeholder="Phone" formControlName="phone" required />
-        <mat-error *ngIf="form.controls.phone.invalid">{{
-          getErrorMessage(form.controls.phone, 'phone')
-        }}</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input
-          matInput
-          placeholder="Address"
-          formControlName="address"
-          required
-        />
-        <mat-error *ngIf="form.controls.address.invalid">{{
-          getErrorMessage(form.controls.address, 'address')
-        }}</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Salary</mat-label>
-        <input
-          matInput
-          placeholder="Salary"
-          formControlName="salary"
-          required
-        />
-        <mat-error *ngIf="form.controls.salary.invalid">{{
-          getErrorMessage(form.controls.salary, 'salary')
-        }}</mat-error>
-      </mat-form-field>
-    </form>
-  </div>
-  <div mat-dialog-actions>
-    <button mat-button (click)="dialogRef.close()">Cancel</button>
-    <button
-      mat-raised-button
-      color="primary"
-      [mat-dialog-close]="form.value"
-      type="submit"
-      [disabled]="form.invalid"
-    >
-      Add
-    </button>
-  </div>
+<h1 mat-dialog-title>Add record</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" formControlName="name" required />
+      <mat-error *ngIf="form.controls.name.invalid">{{
+        getErrorMessage(form.controls.name, 'name')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Department</mat-label>
+      <input
+        matInput
+        placeholder="Department"
+        formControlName="department"
+        required
+      />
+      <mat-error *ngIf="form.controls.department.invalid">{{
+        getErrorMessage(form.controls.department, 'department')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email" required />
+      <mat-error *ngIf="form.controls.email.invalid">{{
+        getErrorMessage(form.controls.email, 'email')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input matInput placeholder="Phone" formControlName="phone" required />
+      <mat-error *ngIf="form.controls.phone.invalid">{{
+        getErrorMessage(form.controls.phone, 'phone')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input
+        matInput
+        placeholder="Address"
+        formControlName="address"
+        required
+      />
+      <mat-error *ngIf="form.controls.address.invalid">{{
+        getErrorMessage(form.controls.address, 'address')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Salary</mat-label>
+      <input matInput placeholder="Salary" formControlName="salary" required />
+      <mat-error *ngIf="form.controls.salary.invalid">{{
+        getErrorMessage(form.controls.salary, 'salary')
+      }}</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [mat-dialog-close]="form.value"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+    Add
+  </button>
 </div>

@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@capital/login/login-form": ["libs/login/login-form/src/index.ts"],
+      "@capital/login/login-page": ["libs/login/login-page/src/index.ts"],
       "@capital/record-list/dialog-add-record": [
         "libs/record-list/dialog-add-record/src/index.ts"
       ],
@@ -32,6 +34,9 @@
       ],
       "@capital/record-list/table-records": [
         "libs/record-list/table-records/src/index.ts"
+      ],
+      "@capital/services/auth-service": [
+        "libs/services/auth-service/src/index.ts"
       ],
       "@capital/services/records-service": [
         "libs/services/records-service/src/index.ts"

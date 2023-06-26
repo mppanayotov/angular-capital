@@ -39,7 +39,7 @@ export class DialogEditRecordComponent {
     @Inject(MAT_DIALOG_DATA) public data: RecordsEntity
   ) {}
 
-  getErrorMessage(field: FormControl, fieldName: string) {
+  getErrorMessage(field: FormControl, fieldName: string): string {
     if (field.hasError('required')) {
       return 'You must enter a value';
     }

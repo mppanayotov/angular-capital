@@ -34,7 +34,7 @@ export class DialogAddRecordComponent {
     public dialogRef: MatDialogRef<DialogAddRecordComponent>
   ) {}
 
-  getErrorMessage(field: FormControl, fieldName: string) {
+  getErrorMessage(field: FormControl, fieldName: string): string {
     if (field.hasError('required')) {
       return 'You must enter a value';
     }

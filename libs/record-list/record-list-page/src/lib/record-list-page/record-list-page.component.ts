@@ -6,6 +6,8 @@ import { DialogDeleteRecordComponent } from '@capital/record-list/dialog-delete-
 import { DialogEditRecordComponent } from '@capital/record-list/dialog-edit-record';
 import { DialogViewRecordComponent } from '@capital/record-list/dialog-view-record';
 import { RecordsService } from '@capital/services/records-service';
+import { AuthService } from '@capital/services/auth-service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'capital-record-list-page',
@@ -15,16 +17,38 @@ import { RecordsService } from '@capital/services/records-service';
 export class RecordListPageComponent implements OnInit {
   records$ = this.recordsService.selectAllRecords();
   records: RecordsEntity[] = [];
+  recordsData: any;
 
   constructor(
     private recordsService: RecordsService,
-    private dialog: MatDialog
+    private authService: AuthService,
+    private dialog: MatDialog,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
+    this.recordsService.loadRecords();
     this.records$.subscribe((records) => {
       this.records = records;
     });
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.http
+        .get<any>('/api/records', {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            Authorization: token,
+          }),
+        })
+        .subscribe((response) => {
+          this.recordsData = response;
+        });
+    }
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 
   handleOpenViewDialog(row: RecordsEntity): void {

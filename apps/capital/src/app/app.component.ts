@@ -1,17 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { RecordsService } from '@capital/services/records-service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'capital-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'capital';
-
-  constructor(private recordsService: RecordsService) {}
-
-  ngOnInit() {
-    this.recordsService.loadRecords();
-  }
 }
