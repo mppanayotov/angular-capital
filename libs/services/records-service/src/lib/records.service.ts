@@ -26,11 +26,12 @@ export class RecordsService {
       Authorization: 'my-auth-token',
     }),
   };
+  // Array from all the current records entries
   storeRecords: RecordsEntity[] = [];
 
   constructor(private http: HttpClient, private store: Store) {}
 
-  /** GET records from the server */
+  // GET records from the server
   getRecordsFromServer(): Observable<Array<RecordsEntity>> {
     return this.http.get<RecordsEntity[]>(this.recordsUrl).pipe(
       tap(() => console.log('Fetched records from server')),
@@ -40,13 +41,13 @@ export class RecordsService {
     );
   }
 
-  /** POST: add a new record to the server */
+  // POST: add a new record to the server
   postRecordToServer(record: RecordsEntity): Observable<RecordsEntity> {
     return this.http
       .post<RecordsEntity>(this.recordsUrl, record, this.httpOptions)
       .pipe(
         tap((newRecord: RecordsEntity) =>
-          console.log(`Added record w/ id=${newRecord.id}`)
+          console.log(`Added record id=${newRecord.id}`)
         ),
         catchError((err) => {
           throw `Error in adding new record id=${record.id}. Details: ` + err;
@@ -54,19 +55,19 @@ export class RecordsService {
       );
   }
 
-  /** PUT: update the record on the server */
+  // PUT: update the record on the server
   putRecordOnServer(record: RecordsEntity): Observable<RecordsEntity> {
-    return this.http
-      .put<RecordsEntity>(this.recordsUrl, record, this.httpOptions)
-      .pipe(
-        tap(() => console.log(`Updated record id=${record.id}`)),
-        catchError((err) => {
-          throw `Error in updating record id=${record.id}. Details: ` + err;
-        })
-      );
+    const url = `${this.recordsUrl}/${record.id}`;
+
+    return this.http.put<RecordsEntity>(url, record, this.httpOptions).pipe(
+      tap(() => console.log(`Updated record id=${record.id}`)),
+      catchError((err) => {
+        throw `Error in updating record id=${record.id}. Details: ` + err;
+      })
+    );
   }
 
-  /** DELETE: delete the record from the server */
+  // DELETE: delete the record from the server
   deleteRecordFromServer(id: number): Observable<RecordsEntity> {
     const url = `${this.recordsUrl}/${id}`;
 
@@ -78,10 +79,12 @@ export class RecordsService {
     );
   }
 
+  // Announce sucess to store
   loadStoreRecordsSuccess(records: RecordsEntity[]): void {
     this.store.dispatch(loadRecordsSuccess({ records }));
   }
 
+  // Get records from server and annouce to store
   loadRecords(): void {
     this.getRecordsFromServer().subscribe((records) => {
       this.loadStoreRecordsSuccess(records);
@@ -89,6 +92,7 @@ export class RecordsService {
     });
   }
 
+  // Select all records from store
   selectAllRecords(): Observable<RecordsEntity[]> {
     this.store.select(selectAllRecords).subscribe((records) => {
       this.storeRecords = records;
@@ -97,6 +101,7 @@ export class RecordsService {
     return this.store.select(selectAllRecords);
   }
 
+  // Post record to server and add to store
   addRecord(newRecordData: RecordsEntityWithoutId): void {
     const newRecord = new newRecordTemplate(this.genId(), newRecordData);
     this.postRecordToServer(newRecord).subscribe(() =>
@@ -104,18 +109,21 @@ export class RecordsService {
     );
   }
 
+  // Put record on server and update on store
   updateRecord(editedRecord: RecordsEntity): void {
     this.putRecordOnServer(editedRecord).subscribe(() =>
       this.store.dispatch(updateRecord({ record: editedRecord }))
     );
   }
 
+  // Delete record from server and remove from store
   deleteRecord(recordId: number): void {
     this.deleteRecordFromServer(recordId).subscribe(() =>
       this.store.dispatch(removeRecord({ recordId }))
     );
   }
 
+  // Generate new ID depending on the currentyl existing entries
   genId(): number {
     return this.storeRecords.length > 0
       ? Math.max(...this.storeRecords.map((record) => record.id)) + 1
