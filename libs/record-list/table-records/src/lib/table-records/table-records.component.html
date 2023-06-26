@@ -33,6 +33,7 @@
         View Record
       </button>
       <button
+        *ngIf="role === 'admin'"
         mat-icon-button
         color="primary"
         aria-label="Edit record"
@@ -40,11 +41,17 @@
       >
         <mat-icon>settings</mat-icon>
       </button>
-      <button mat-raised-button color="primary" (click)="openEditDialog(row)">
+      <button
+        *ngIf="role === 'admin'"
+        mat-raised-button
+        color="primary"
+        (click)="openEditDialog(row)"
+      >
         <mat-icon>settings</mat-icon>
         Edit Record
       </button>
       <button
+        *ngIf="role === 'admin'"
         mat-icon-button
         color="warn"
         aria-label="Delete record"
@@ -52,7 +59,12 @@
       >
         <mat-icon>delete</mat-icon>
       </button>
-      <button mat-raised-button color="warn" (click)="openDeleteDialog(row)">
+      <button
+        *ngIf="role === 'admin'"
+        mat-raised-button
+        color="warn"
+        (click)="openDeleteDialog(row)"
+      >
         <mat-icon>delete</mat-icon>
         Delete Record
       </button>

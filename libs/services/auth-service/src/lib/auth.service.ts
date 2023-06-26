@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   constructor(private router: Router, private http: HttpClient) {}
+  private apiUrl = '/api/login';
 
   canActivate(): boolean {
     const token = localStorage.getItem('token');
@@ -32,7 +33,7 @@ export class AuthService {
 
   login(username: string, password: string): void {
     this.http
-      .post<any>('/api/login', {
+      .post<any>(this.apiUrl, {
         username,
         password,
       })

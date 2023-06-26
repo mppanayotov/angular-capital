@@ -20,8 +20,8 @@ app.get('/api', (req, res) => {
 
 // Mock usersDatabase for demonstration
 const usersDatabase = [
-  { username: 'admin', password: 'admin' },
-  { username: 'user', password: 'user' },
+  { username: 'admin', password: 'admin', role: 'admin' },
+  { username: 'user', password: 'user', role: 'user' },
 ];
 
 // Login endpoint
@@ -35,7 +35,7 @@ app.post('/api/login', (req, res) => {
   // Perform your validation logic here, such as checking against a database
   // If valid, generate a JWT token and send it back to the client
   if (user) {
-    const token = jwt.sign({ username }, 'your_secret_key');
+    const token = jwt.sign({ username, role: user.role }, 'your_secret_key');
     res.json({ token });
   } else {
     res.status(401).json({ message: 'Invalid credentials' });
@@ -43,22 +43,29 @@ app.post('/api/login', (req, res) => {
 });
 
 // Records endpoint(protected)
-app.get('/api/records', authenticateToken, (req, res) => {
+app.get('/api/records', verifyToken, (req, res) => {
   // The user is authorized, so you can return protected data
-  res.json({ message: 'Protected records data' });
+  res.json({
+    message: 'Protected records data',
+    role: checkRole(req),
+  });
 });
 
-function authenticateToken(req, res, next) {
+function verifyToken(req, res, next) {
   const authHeader = req.headers['authorization'];
   const token = authHeader;
 
-  if (token == null) return res.sendStatus(401);
+  if (!token) return res.sendStatus(401);
 
   jwt.verify(token, 'your_secret_key', (err, user) => {
     if (err) return res.sendStatus(403);
     req.user = user;
     next();
   });
+}
+
+function checkRole(req) {
+  return req.user.role;
 }
 
 const port = process.env.PORT || 3000;

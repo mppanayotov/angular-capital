@@ -24,6 +24,7 @@ export class TableRecordsComponent implements OnChanges {
   @Input() filter = '';
   @Input() displayedColumns: string[] = [];
   @Input() records: RecordsEntity[] = [];
+  @Input() role = '';
 
   @Output() openViewDialogEvent = new EventEmitter<RecordsEntity>();
   @Output() openEditDialogEvent = new EventEmitter<RecordsEntity>();

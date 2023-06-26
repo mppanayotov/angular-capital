@@ -17,7 +17,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class RecordListPageComponent implements OnInit {
   records$ = this.recordsService.selectAllRecords();
   records: RecordsEntity[] = [];
-  recordsData: any;
+  role = '';
 
   constructor(
     private recordsService: RecordsService,
@@ -42,7 +42,7 @@ export class RecordListPageComponent implements OnInit {
           }),
         })
         .subscribe((response) => {
-          this.recordsData = response;
+          this.role = response.role;
         });
     }
   }

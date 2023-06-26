@@ -6,10 +6,20 @@
     </button>
 
     <div class="record-list-page__head">
-      <button mat-fab color="primary" (click)="openAddDialog()">
+      <button
+        *ngIf="role === 'admin'"
+        mat-fab
+        color="primary"
+        (click)="openAddDialog()"
+      >
         <mat-icon>add</mat-icon>
       </button>
-      <button mat-raised-button color="primary" (click)="openAddDialog()">
+      <button
+        *ngIf="role === 'admin'"
+        mat-raised-button
+        color="primary"
+        (click)="openAddDialog()"
+      >
         <mat-icon>add</mat-icon>
         Add Record
       </button>
@@ -23,6 +33,7 @@
       [filter]="filter.value"
       [records]="records"
       [displayedColumns]="['name', 'department', 'salary', 'actions']"
+      [role]="role"
       (openViewDialogEvent)="handleOpenViewDialog($event)"
       (openEditDialogEvent)="handleOpenEditDialog($event)"
       (openDeleteDialogEvent)="handleOpenDeleteDialog($event)"
