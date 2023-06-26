@@ -18,7 +18,10 @@ export class DialogEditRecordComponent {
     email: [this.data.email, [Validators.required, Validators.email]],
     phone: [
       this.data.phone,
-      [Validators.required, Validators.pattern('[0-9]*')],
+      [
+        Validators.required,
+        Validators.pattern('^\\+\\d{3} \\(\\d{3}\\) \\d{3}-\\d{4}$'),
+      ],
     ],
     address: [this.data.address, Validators.required],
     salary: [

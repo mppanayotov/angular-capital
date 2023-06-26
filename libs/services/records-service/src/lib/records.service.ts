@@ -11,7 +11,7 @@ import {
   RecordsEntityWithoutId,
 } from '@capital/shared/records';
 import { Store } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -21,7 +21,10 @@ export class RecordsService {
   private recordsUrl =
     'https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/records'; // URL to web api
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'my-auth-token',
+    }),
   };
   storeRecords: RecordsEntity[] = [];
 
@@ -31,7 +34,9 @@ export class RecordsService {
   getRecordsFromServer(): Observable<Array<RecordsEntity>> {
     return this.http.get<RecordsEntity[]>(this.recordsUrl).pipe(
       tap(() => console.log('Fetched records from server')),
-      catchError(this.handleError<RecordsEntity[]>('getRecordsFromServer', []))
+      catchError((err) => {
+        throw 'Error in fethching records. Details: ' + err;
+      })
     );
   }
 
@@ -40,10 +45,12 @@ export class RecordsService {
     return this.http
       .post<RecordsEntity>(this.recordsUrl, record, this.httpOptions)
       .pipe(
-        tap((newRecod: RecordsEntity) =>
-          console.log(`Added record w/ id=${newRecod.id}`)
+        tap((newRecord: RecordsEntity) =>
+          console.log(`Added record w/ id=${newRecord.id}`)
         ),
-        catchError(this.handleError<RecordsEntity>('postRecordToServer'))
+        catchError((err) => {
+          throw `Error in adding new record id=${record.id}. Details: ` + err;
+        })
       );
   }
 
@@ -53,7 +60,9 @@ export class RecordsService {
       .put<RecordsEntity>(this.recordsUrl, record, this.httpOptions)
       .pipe(
         tap(() => console.log(`Updated record id=${record.id}`)),
-        catchError(this.handleError<RecordsEntity>('putRecordOnServer'))
+        catchError((err) => {
+          throw `Error in updating record id=${record.id}. Details: ` + err;
+        })
       );
   }
 
@@ -63,29 +72,10 @@ export class RecordsService {
 
     return this.http.delete<RecordsEntity>(url, this.httpOptions).pipe(
       tap(() => console.log(`Deleted record id=${id}`)),
-      catchError(this.handleError<RecordsEntity>('deleteRecordFromServer'))
+      catchError((err) => {
+        throw `Error in deleting record id=${id}. Details: ` + err;
+      })
     );
-  }
-
-  /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   *
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-  private handleError<T>(
-    operation = 'operation',
-    result?: T
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ): (error: any) => Observable<T> {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (error: any): Observable<T> => {
-      console.error(error); // log to console
-      console.log(`${operation} failed: ${error.message}`);
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
   }
 
   loadStoreRecordsSuccess(records: RecordsEntity[]): void {
@@ -109,18 +99,21 @@ export class RecordsService {
 
   addRecord(newRecordData: RecordsEntityWithoutId): void {
     const newRecord = new newRecordTemplate(this.genId(), newRecordData);
-    this.store.dispatch(addRecord({ record: newRecord }));
-    this.putRecordOnServer(newRecord);
+    this.postRecordToServer(newRecord).subscribe(() =>
+      this.store.dispatch(addRecord({ record: newRecord }))
+    );
   }
 
   updateRecord(editedRecord: RecordsEntity): void {
-    this.store.dispatch(updateRecord({ record: editedRecord }));
-    this.putRecordOnServer(editedRecord);
+    this.putRecordOnServer(editedRecord).subscribe(() =>
+      this.store.dispatch(updateRecord({ record: editedRecord }))
+    );
   }
 
   deleteRecord(recordId: number): void {
-    this.store.dispatch(removeRecord({ recordId }));
-    this.deleteRecordFromServer(recordId);
+    this.deleteRecordFromServer(recordId).subscribe(() =>
+      this.store.dispatch(removeRecord({ recordId }))
+    );
   }
 
   genId(): number {

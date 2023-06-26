@@ -12,7 +12,13 @@ export class DialogAddRecordComponent {
     name: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
     department: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    phone: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+    phone: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern('^\\+\\d{3} \\(\\d{3}\\) \\d{3}-\\d{4}$'),
+      ],
+    ],
     address: ['', Validators.required],
     salary: [
       '',
