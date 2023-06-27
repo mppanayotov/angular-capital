@@ -2,6 +2,7 @@
   "name": "capital-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/capital-e2e/src",
+  "tags": ["scope:capital", "type:e2e"],
   "projectType": "application",
   "targets": {
     "e2e": {
@@ -28,6 +29,5 @@
       }
     }
   },
-  "tags": [],
   "implicitDependencies": ["capital"]
 }
