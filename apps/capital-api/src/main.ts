@@ -36,19 +36,16 @@ app.post('/api/login', (req, res) => {
   // If valid, generate a JWT token and send it back to the client
   if (user) {
     const token = jwt.sign({ username, role: user.role }, 'your_secret_key');
-    res.json({ token });
+    res.json({ token: token, role: jwt.decode(token)['role'] });
   } else {
     res.status(401).json({ message: 'Invalid credentials' });
   }
 });
 
-// Records endpoint(protected)
-app.get('/api/records', verifyToken, (req, res) => {
+// Records endpoint(protected). Verify user token
+app.get('/api/record-list', verifyToken, (req, res) => {
   // The user is authorized, so you can return protected data
-  res.json({
-    message: 'Protected records data',
-    role: checkRole(req),
-  });
+  res.json({ message: 'Protected records data' });
 });
 
 function verifyToken(req, res, next) {
@@ -62,10 +59,6 @@ function verifyToken(req, res, next) {
     req.user = user;
     next();
   });
-}
-
-function checkRole(req) {
-  return req.user.role;
 }
 
 const port = process.env.PORT || 3000;

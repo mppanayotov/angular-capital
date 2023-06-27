@@ -7,7 +7,7 @@ import { DialogEditRecordComponent } from '@capital/record-list/dialog-edit-reco
 import { DialogViewRecordComponent } from '@capital/record-list/dialog-view-record';
 import { RecordsService } from '@capital/services/records-service';
 import { AuthService } from '@capital/services/auth-service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'capital-record-list-page',
@@ -17,34 +17,23 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class RecordListPageComponent implements OnInit {
   records$ = this.recordsService.selectAllRecords();
   records: RecordsEntity[] = [];
-  role = '';
+  role = this.authService.role();
+  authorized$ = this.authService.isAuthorized(this.router.url);
 
   constructor(
+    private router: Router,
     private recordsService: RecordsService,
     private authService: AuthService,
-    private dialog: MatDialog,
-    private http: HttpClient
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
-    this.recordsService.loadRecords();
-    this.records$.subscribe((records) => {
-      this.records = records;
+    this.authorized$.subscribe(() => {
+      this.recordsService.loadRecords();
+      this.records$.subscribe((records) => {
+        this.records = records;
+      });
     });
-
-    const token = localStorage.getItem('token');
-    if (token) {
-      this.http
-        .get<any>('/api/records', {
-          headers: new HttpHeaders({
-            'Content-Type': 'application/json',
-            Authorization: token,
-          }),
-        })
-        .subscribe((response) => {
-          this.role = response.role;
-        });
-    }
   }
 
   logout(): void {

@@ -18,14 +18,17 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class RecordsService {
+  // API base url
   private recordsUrl =
     'https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/records'; // URL to web api
+
+  // Base http headers
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'my-auth-token',
     }),
   };
+
   // Array from all the current records entries
   storeRecords: RecordsEntity[] = [];
 
