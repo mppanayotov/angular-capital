@@ -14,7 +14,11 @@ https://mppanayotov-capital.surge.sh
 
 ## Start the app
 
-To start the development server run `nx serve capital`. Open your browser and navigate to http://localhost:4200/. Happy coding!
+To start both backed API and frontend app run `npm start`. Open your browser and navigate to http://localhost:4200/.
+To start dep-graph run `npm dep-graph`. Open your browser and navigate to http://localhost:4211/projects/all?groupByFolder=true.
+To build all project run `npm build`.
+
+Happy coding!
 
 ## Generate code
 
