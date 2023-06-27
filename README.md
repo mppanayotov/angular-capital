@@ -1,6 +1,6 @@
 # Nx Graph
 
-<img src="graph.png">
+<img src="graph.jpg">
 
 # Live Demo
 
