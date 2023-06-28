@@ -14,15 +14,15 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to capital-api!' });
-});
-
 // Mock usersDatabase for demonstration
 const usersDatabase = [
   { username: 'admin', password: 'admin', role: 'admin' },
   { username: 'user', password: 'user', role: 'user' },
 ];
+
+app.get('/api', (req, res) => {
+  res.send({ message: 'Welcome to capital-api!' });
+});
 
 // Login endpoint
 app.post('/api/login', (req, res) => {
@@ -42,7 +42,7 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-// Records endpoint(protected). Verify user token
+// Records endpoint(protected). Verify user token.
 app.get('/api/record-list', verifyToken, (req, res) => {
   // The user is authorized, so you can return protected data
   res.json({ message: 'Protected records data' });

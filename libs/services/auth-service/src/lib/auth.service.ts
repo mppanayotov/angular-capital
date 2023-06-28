@@ -66,31 +66,22 @@ export class AuthService {
       );
   }
 
-  // Send login credentials to API. On success save token and role, redirect to record list page
-  login(username: string, password: string): void {
+  // Send login credentials to API.
+  login(
+    username: string,
+    password: string
+  ): Observable<{ token: string; role: string }> {
     const url = `${this.apiUrl}/login`;
 
-    this.http
-      .post<{
-        username: string;
-        password: string;
-        token: string;
-        role: string;
-      }>(url, {
-        username,
-        password,
-      })
-      .pipe(
-        tap(() => console.log('Logged in to server')),
-        catchError((err) => {
-          throw 'Error in logging in. Details: ' + err;
-        })
-      )
-      .subscribe((response) => {
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('role', response.role);
-        this.router.navigate(['/record-list']);
-      });
+    return this.http.post<{
+      username: string;
+      password: string;
+      token: string;
+      role: string;
+    }>(url, {
+      username,
+      password,
+    });
   }
 
   // Remove saved token and role. Redirect to login page.
@@ -101,5 +92,11 @@ export class AuthService {
     token && localStorage.removeItem('token');
     role && localStorage.removeItem('role');
     this.router.navigate(['/login']);
+  }
+
+  // On a successful login: save token and role.
+  setSession(apiResponse: { token: string; role: string }): void {
+    localStorage.setItem('token', apiResponse.token);
+    localStorage.setItem('role', apiResponse.role);
   }
 }

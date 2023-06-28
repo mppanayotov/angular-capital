@@ -1,10 +1,18 @@
 @import 'index';
 
 table {
+  width: 100%;
   background: none;
   table-layout: fixed;
 }
 table.hasMultipleActions {
+  td {
+    width: calc((100% - 180px) / 3);
+
+    @include breakpoint-down(mobile) {
+      width: 100%;
+    }
+  }
   td:last-child {
     @include breakpoint-between(mobile-medium, mobile) {
       min-height: 139px;
@@ -14,7 +22,6 @@ table.hasMultipleActions {
       min-height: 0;
     }
   }
-
   .mat-mdc-row {
     @include breakpoint-between(mobile-medium, mobile) {
       min-height: 147px;
@@ -22,6 +29,14 @@ table.hasMultipleActions {
 
     @include breakpoint-down(mobile-medium) {
       min-height: 0;
+    }
+  }
+  .mat-column-actions {
+    min-width: 180px;
+    width: 180px;
+
+    @include breakpoint-down(mobile) {
+      width: 100%;
     }
   }
 }
@@ -61,7 +76,7 @@ th:last-child {
 td {
   padding-top: 8px;
   padding-bottom: 8px;
-  width: calc((100% - 180px) / 3);
+  width: calc((100% - 120px) / 3);
 
   @include breakpoint-down(mobile) {
     position: relative;
@@ -196,8 +211,8 @@ mat-paginator {
 }
 .mat-column-actions {
   text-align: center;
-  min-width: 180px;
-  width: 180px;
+  min-width: 120px;
+  width: 120px;
 
   @include breakpoint-down(mobile) {
     padding-left: 0;
