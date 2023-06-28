@@ -7,7 +7,6 @@
       - [Backend](#backend)
       - [Development](#development)
     - [Project Navigation](#project-navigation)
-  - [In the project root folder are located scripts for running multiple targets and in parallel. Nx console extension for VS Code is recommended.](#in-the-project-root-folder-are-located-scripts-for-running-multiple-targets-and-in-parallel-nx-console-extension-for-vs-code-is-recommended)
     - [Key functionality](#key-functionality)
     - [Project Notes](#project-notes)
   - [Generate code](#generate-code)
@@ -29,7 +28,7 @@
 
 ## Start the app
 
-To start both backed API and frontend app run `npm start`. Open your browser and navigate to http://localhost:4200/.
+To start both backend API and frontend app run `npm start`. Open your browser and navigate to http://localhost:4200/.
 
 To start dep-graph run `npm dep-graph`. Open your browser and navigate to http://localhost:4211/projects/all?groupByFolder=true.
 
@@ -82,7 +81,7 @@ Login credentials:
 
 The generated Nx graph is synced with the codebase of the project and should ease navigating the project. The npm command for starting a live interactive graph is `npm dep-graph`.
 
-## In the project root folder are located scripts for running multiple targets and in parallel. Nx console extension for VS Code is recommended.
+In the project root folder are located scripts for running multiple targets and in parallel. Nx console extension for VS Code is recommended.
 
 ---
 
@@ -103,13 +102,13 @@ The generated Nx graph is synced with the codebase of the project and should eas
 
 **db.json.ts** : Contains the generator schema used to generate the records database via https://json-generator.com/
 
-**db.json** : Contains the mock database generated. This file is served online at https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/. This is the path the app uses when fetching records' data in `records.service.ts`. API responds but does not mutate the existing database.
+**db.json** : Contains the mock database generated. The file is served online at https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/. This is the path the app uses when fetching records' data in `records.service.ts`. API responds but does not mutate the existing database.
 
 **records.service.ts** : Service that handles records' data traffic both for the online API and the NgRx Store.
 
 **auth.service.ts** : Service that is responsible for user's authentication and authorization status. This service handles user's permissions regarding route navigation, localstorage information and communicating with the local backed API.
 
-**apps/capital-api/src/main.ts** : Provides basic backend functions. Database is string array. Signs and verifies JwT tokens. Returns user role which is used to further defines user permissions.
+**apps/capital-api/src/main.ts** : Provides basic backend functions. Database is string array. Signs and verifies JwT tokens. Returns user role which is used to further define user permissions.
 
 ---
 
