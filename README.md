@@ -39,6 +39,11 @@ Happy coding!
 
 ## About
 
+Login credentials:
+
+- **`username: 'admin', password: 'admin'`** (role: 'admin')
+- **`username: 'user', password: 'user'`** (role: 'user')
+
 ---
 
 ### Tech stack
