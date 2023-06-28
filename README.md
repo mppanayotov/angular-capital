@@ -95,6 +95,7 @@ In the project root folder are located scripts for running multiple targets and 
 > - NgRx 'forFeature'
 > - Routing 'forChild'
 > - Globally available SASS variables/functions
+> - Basic form validation
 
 ---
 
@@ -102,7 +103,7 @@ In the project root folder are located scripts for running multiple targets and 
 
 **db.json.ts** : Contains the generator schema used to generate the records database via https://json-generator.com/
 
-**db.json** : Contains the mock database generated. The file is served online at https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/. This is the path the app uses when fetching records' data in `records.service.ts`. API responds but does not mutate the existing database.
+**db.json** : Contains the mock database generated. The file is served online at https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/. This is the path the app uses when fetching records' data in `records.service.ts`. API responds but does not mutate the existing database. (Since the existing database is not being mutated, you will get error on update/delete a newly added entry.)
 
 **records.service.ts** : Service that handles records' data traffic both for the online API and the NgRx Store.
 
