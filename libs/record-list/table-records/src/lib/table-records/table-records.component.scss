@@ -13,7 +13,7 @@ table.hasMultipleActions {
       width: 100%;
     }
   }
-  td:last-child {
+  tr {
     @include breakpoint-between(mobile-medium, mobile) {
       min-height: 139px;
     }
@@ -24,7 +24,7 @@ table.hasMultipleActions {
   }
   .mat-mdc-row {
     @include breakpoint-between(mobile-medium, mobile) {
-      min-height: 147px;
+      min-height: 143px;
     }
 
     @include breakpoint-down(mobile-medium) {
@@ -35,8 +35,13 @@ table.hasMultipleActions {
     min-width: 180px;
     width: 180px;
 
-    @include breakpoint-down(mobile) {
+    @include breakpoint-down(mobile-medium) {
       width: 100%;
+    }
+  }
+  .mat-mdc-header-row {
+    @include breakpoint-down(mobile) {
+      min-height: 0;
     }
   }
 }
@@ -116,43 +121,28 @@ td:last-child {
     right: 0;
     top: 0;
     width: 160px;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
   }
 
-  @include breakpoint-between(mobile-medium, mobile) {
+  @include breakpoint-down(mobile) {
     border-bottom: none;
-    overflow: visible;
-    min-height: 92px;
   }
 
   @include breakpoint-down(mobile-medium) {
     position: relative;
     width: 100%;
-    min-height: 0;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: calc(100vw - 2 * $shell-gutter-mobile);
-    height: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    display: none;
-    pointer-events: none;
-
-    @include breakpoint-between(mobile-medium, mobile) {
-      display: block;
-    }
   }
 }
 tr {
   @include breakpoint-down(mobile) {
     display: block;
     height: auto !important;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
+}
+tr:last-child {
+  border-bottom: none;
 }
 button:nth-of-type(odd) {
   @include breakpoint-down(mobile) {
@@ -202,11 +192,6 @@ mat-paginator {
 .mat-mdc-row {
   @include breakpoint-between(mobile-medium, mobile) {
     position: relative;
-    min-height: 100px;
-  }
-
-  @include breakpoint-down(mobile-medium) {
-    min-height: 0;
   }
 }
 .mat-column-actions {
