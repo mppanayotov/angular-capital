@@ -1,3 +1,22 @@
+- [Nx Graph](#nx-graph)
+- [Capital](#capital)
+  - [Start the app](#start-the-app)
+  - [About](#about)
+    - [Tech stack](#tech-stack)
+      - [Frontend](#frontend)
+      - [Backend](#backend)
+      - [Development](#development)
+    - [Project Navigation](#project-navigation)
+  - [In the project root folder are located scripts for running multiple targets and in parallel. Nx console extension for VS Code is recommended.](#in-the-project-root-folder-are-located-scripts-for-running-multiple-targets-and-in-parallel-nx-console-extension-for-vs-code-is-recommended)
+    - [Key functionality](#key-functionality)
+    - [Project Notes](#project-notes)
+  - [Generate code](#generate-code)
+  - [Running tasks](#running-tasks)
+  - [Want better Editor Integration?](#want-better-editor-integration)
+  - [Ready to deploy?](#ready-to-deploy)
+  - [Set up CI!](#set-up-ci)
+  - [Connect with us!](#connect-with-us)
+
 # Nx Graph
 
 <img src="graph.jpg">
@@ -17,6 +36,77 @@ To start dep-graph run `npm dep-graph`. Open your browser and navigate to http:/
 To build all project run `npm build`.
 
 Happy coding!
+
+## About
+
+---
+
+### Tech stack
+
+#### Frontend
+
+> Angular
+>
+> - NgRx store
+> - Angular Material
+> - SCSS
+
+#### Backend
+
+> NodeJs
+>
+> - Express
+> - JwT
+
+#### Development
+
+> Nx
+>
+> - Monorepo
+> - Jest
+> - Cypress
+> - ESLint
+>
+> VS Code
+>
+> Docker
+
+---
+
+### Project Navigation
+
+The generated Nx graph is synced with the codebase of the project and should ease navigating the project. The npm command for starting a live interactive graph is `npm dep-graph`.
+
+## In the project root folder are located scripts for running multiple targets and in parallel. Nx console extension for VS Code is recommended.
+
+---
+
+### Key functionality
+
+> - CRUD functions for managing a 'records' database.
+> - Search, sort and filter 'records' entries.
+> - Authentication and authorization for 'user'.
+
+> - Angular module lazy loading
+> - NgRx 'forFeature'
+> - Routing 'forChild'
+> - Globally available SASS variables/functions
+
+---
+
+### Project Notes
+
+**db.json.ts** : Contains the generator schema used to generate the records database via https://json-generator.com/
+
+**db.json** : Contains the mock database generated. This file is served online at https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/. This is the path the app uses when fetching records' data in `records.service.ts`. API responds but does not mutate the existing database.
+
+**records.service.ts** : Service that handles records' data traffic both for the online API and the NgRx Store.
+
+**auth.service.ts** : Service that is responsible for user's authentication and authorization status. This service handles user's permissions regarding route navigation, localstorage information and communicating with the local backed API.
+
+**apps/capital-api/src/main.ts** : Provides basic backend functions. Database is string array. Signs and verifies JwT tokens. Returns user role which is used to further defines user permissions.
+
+---
 
 ## Generate code
 

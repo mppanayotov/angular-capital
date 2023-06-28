@@ -49,9 +49,9 @@ export class AuthService {
 
   // Send authentication to API and test authorization for specified url.
   isAuthorized(
-    navigarionUrl: string
+    navigationUrl: string
   ): Observable<{ token: string; role: string }> {
-    const url = `${this.apiUrl}${navigarionUrl}`;
+    const url = `${this.apiUrl}${navigationUrl}`;
 
     this.httpOptions.headers = this.httpOptions.headers.set(
       'Authorization',

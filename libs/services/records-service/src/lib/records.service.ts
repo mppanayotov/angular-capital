@@ -39,7 +39,7 @@ export class RecordsService {
     return this.http.get<RecordsEntity[]>(this.recordsUrl).pipe(
       tap(() => console.log('Fetched records from server')),
       catchError((err) => {
-        throw 'Error in fethching records. Details: ' + err;
+        throw 'Error in fetching records. Details: ' + err;
       })
     );
   }
@@ -82,12 +82,12 @@ export class RecordsService {
     );
   }
 
-  // Announce sucess to store
+  // Announce success to store
   loadStoreRecordsSuccess(records: RecordsEntity[]): void {
     this.store.dispatch(loadRecordsSuccess({ records }));
   }
 
-  // Get records from server and annouce to store
+  // Get records from server and announce to store
   loadRecords(): void {
     this.getRecordsFromServer().subscribe((records) => {
       this.loadStoreRecordsSuccess(records);
@@ -126,7 +126,7 @@ export class RecordsService {
     );
   }
 
-  // Generate new ID depending on the currentyl existing entries
+  // Generate new ID depending on the currently existing entries
   genId(): number {
     return this.storeRecords.length > 0
       ? Math.max(...this.storeRecords.map((record) => record.id)) + 1
