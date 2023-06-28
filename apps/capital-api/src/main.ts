@@ -35,8 +35,16 @@ app.post('/api/login', (req, res) => {
   // Perform your validation logic here, such as checking against a database
   // If valid, generate a JWT token and send it back to the client
   if (user) {
-    const token = jwt.sign({ username, role: user.role }, 'your_secret_key');
-    res.json({ token: token, role: jwt.decode(token)['role'] });
+    const expirationTime = Math.floor(Date.now() / 1000) + 3600; // Expiration time set to one hour from now
+    const token = jwt.sign(
+      { username, role: user.role, exp: expirationTime },
+      'your_secret_key'
+    );
+    res.json({
+      token: token,
+      role: jwt.decode(token)['role'],
+      exp: jwt.decode(token)['exp'],
+    });
   } else {
     res.status(401).json({ message: 'Invalid credentials' });
   }

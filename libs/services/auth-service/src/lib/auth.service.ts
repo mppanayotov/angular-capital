@@ -34,8 +34,10 @@ export class AuthService {
   isAuthenticated(): boolean {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
+    const exp = localStorage.getItem('exp');
+    const currentTime = Math.floor(Date.now() / 1000);
 
-    return !!(token && role);
+    return !!(token && role && currentTime < Number(exp));
   }
 
   // Return user's role
@@ -70,7 +72,7 @@ export class AuthService {
   login(
     username: string,
     password: string
-  ): Observable<{ token: string; role: string }> {
+  ): Observable<{ token: string; role: string; exp: string }> {
     const url = `${this.apiUrl}/login`;
 
     return this.http.post<{
@@ -78,6 +80,7 @@ export class AuthService {
       password: string;
       token: string;
       role: string;
+      exp: string;
     }>(url, {
       username,
       password,
@@ -88,15 +91,18 @@ export class AuthService {
   logout(): void {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
+    const exp = localStorage.getItem('exp');
 
     token && localStorage.removeItem('token');
     role && localStorage.removeItem('role');
+    exp && localStorage.removeItem('exp');
     this.router.navigate(['/login']);
   }
 
   // On a successful login: save token and role.
-  setSession(apiResponse: { token: string; role: string }): void {
+  setSession(apiResponse: { token: string; role: string; exp: string }): void {
     localStorage.setItem('token', apiResponse.token);
     localStorage.setItem('role', apiResponse.role);
+    localStorage.setItem('exp', apiResponse.exp);
   }
 }
