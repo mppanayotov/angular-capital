@@ -1,4 +1,10 @@
-<table mat-table matSort [dataSource]="dataSource" aria-label="Record list">
+<table
+  mat-table
+  matSort
+  [dataSource]="dataSource"
+  aria-label="Record list"
+  [ngClass]="role === 'admin' ? 'hasMultipleActions' : ''"
+>
   <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>

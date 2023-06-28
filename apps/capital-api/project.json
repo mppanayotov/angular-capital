@@ -1,9 +1,9 @@
 {
   "name": "capital-api",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/capital-api/src",
-  "tags": ["type:app", "scope:capital-api"],
   "projectType": "application",
+  "sourceRoot": "apps/capital-api/src",
+  "tags": ["scope:capital-api", "type:app"],
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",

@@ -41,8 +41,9 @@
       "@capital/services/records-service": [
         "libs/services/records-service/src/index.ts"
       ],
-      "@capital/shared/records": ["libs/shared/records/src/index.ts"],
-      "@capital/shared/styles": ["libs/shared/styles/src/index.ts"]
+      "@capital/shared/footer": ["libs/shared/footer/src/index.ts"],
+      "@capital/shared/header": ["libs/shared/header/src/index.ts"],
+      "@capital/shared/records": ["libs/shared/records/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

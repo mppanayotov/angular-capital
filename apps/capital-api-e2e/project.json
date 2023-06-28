@@ -1,6 +1,8 @@
 {
   "name": "capital-api-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "tags": ["scope:capital-api", "type:e2e"],
   "implicitDependencies": ["capital-api"],
   "targets": {
     "e2e": {

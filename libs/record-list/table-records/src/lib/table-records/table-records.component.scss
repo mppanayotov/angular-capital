@@ -1,9 +1,32 @@
+@import 'index';
+
 table {
   background: none;
   table-layout: fixed;
 }
+table.hasMultipleActions {
+  td:last-child {
+    @include breakpoint-between(mobile-medium, mobile) {
+      min-height: 139px;
+    }
+
+    @include breakpoint-down(mobile-medium) {
+      min-height: 0;
+    }
+  }
+
+  .mat-mdc-row {
+    @include breakpoint-between(mobile-medium, mobile) {
+      min-height: 147px;
+    }
+
+    @include breakpoint-down(mobile-medium) {
+      min-height: 0;
+    }
+  }
+}
 th {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     display: inline-flex;
     justify-content: center;
     width: auto;
@@ -13,17 +36,25 @@ th {
   }
 }
 th[aria-sort='none'] {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     opacity: 0.6;
   }
 }
 th:nth-last-child(2) {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     padding-right: 0;
   }
 }
+th:first-child {
+  @include breakpoint-between(mobile-small, mobile) {
+    margin-left: 53px;
+  }
+  @include breakpoint-down(mobile-small) {
+    margin-left: auto;
+  }
+}
 th:last-child {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     display: none;
   }
 }
@@ -32,11 +63,20 @@ td {
   padding-bottom: 8px;
   width: calc((100% - 180px) / 3);
 
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     position: relative;
-    padding: 4px 8px 4px 112px;
+    padding: 4px 196px 4px 112px;
     display: block;
     width: 100%;
+  }
+
+  @include breakpoint-down(mobile-medium) {
+    padding-right: 8px;
+  }
+}
+td:not(:last-child) {
+  @include breakpoint-down(mobile) {
+    border-bottom: none;
   }
 
   &:before {
@@ -50,30 +90,57 @@ td {
     font-weight: 500;
     text-transform: capitalize;
 
-    @media (max-width: 767px) {
+    @include breakpoint-down(mobile) {
       display: block;
     }
   }
 }
-td:not(:last-child) {
-  @media (max-width: 767px) {
-    border-bottom: none;
-  }
-}
 td:last-child {
-  @media (max-width: 767px) {
-    padding-bottom: 8px;
+  @include breakpoint-down(mobile) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 160px;
     margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+
+  @include breakpoint-between(mobile-medium, mobile) {
+    border-bottom: none;
+    overflow: visible;
+    min-height: 92px;
+  }
+
+  @include breakpoint-down(mobile-medium) {
+    position: relative;
+    width: 100%;
+    min-height: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100vw - 2 * $shell-gutter-mobile);
+    height: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    display: none;
+    pointer-events: none;
+
+    @include breakpoint-between(mobile-medium, mobile) {
+      display: block;
+    }
   }
 }
 tr {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     display: block;
     height: auto !important;
   }
 }
 button:nth-of-type(odd) {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     display: none;
   }
 }
@@ -82,22 +149,22 @@ button:nth-of-type(even) {
   width: 100%;
   margin-bottom: 6px;
 
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     display: inline-flex;
   }
 }
 mat-paginator {
   background: none;
 
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     margin-top: 8px;
   }
 }
 .mat-mdc-header-row {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     padding-bottom: 8px;
     margin-bottom: 12px;
@@ -112,18 +179,27 @@ mat-paginator {
     text-transform: capitalize;
     white-space: nowrap;
 
-    @media (max-width: 767px) {
+    @include breakpoint-down(mobile) {
       display: block;
     }
   }
 }
+.mat-mdc-row {
+  @include breakpoint-between(mobile-medium, mobile) {
+    position: relative;
+    min-height: 100px;
+  }
 
+  @include breakpoint-down(mobile-medium) {
+    min-height: 0;
+  }
+}
 .mat-column-actions {
   text-align: center;
   min-width: 180px;
   width: 180px;
 
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
@@ -133,7 +209,7 @@ mat-paginator {
   height: 65px;
   font-style: italic;
 
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile) {
     height: auto;
     padding: 4px 8px;
   }

@@ -1,7 +1,9 @@
+@import 'index';
+
 .login-page {
   min-height: 440px;
 
-  @media (max-width: 1024px) {
+  @include breakpoint-down(tablet) {
     min-height: 0;
   }
 
@@ -18,7 +20,7 @@
     background-repeat: no-repeat;
     pointer-events: none;
 
-    @media (max-width: 1024px) {
+    @include breakpoint-down(tablet) {
       width: 100%;
       opacity: 0.4;
     }
@@ -35,19 +37,16 @@
     opacity: 0.5;
     pointer-events: none;
 
-    @media (max-width: 1024px) {
+    @include breakpoint-down(tablet) {
       width: 100%;
       background-color: #fff;
     }
   }
 
   .login-page__inner {
+    margin-left: auto;
+    margin-right: auto;
     max-width: 600px;
-
-    @media (max-width: 1024px) {
-      margin-left: auto;
-      margin-right: auto;
-    }
   }
 
   .login-page__body {
@@ -58,10 +57,10 @@
     left: 50vw;
     width: 50vw;
     min-width: 320px;
-    max-width: 720px;
+    max-width: calc((#{$shell-max-width} + #{$shell-gutter} * 2) / 2);
     transform: translateY(-50%);
 
-    @media (max-width: 1024px) {
+    @include breakpoint-down(tablet) {
       position: relative;
       margin: 5vh auto 40px auto;
       top: 0;
@@ -74,7 +73,7 @@
       background-color: rgba(255, 255, 255, 0.6);
     }
 
-    @media (max-width: 575px) {
+    @include breakpoint-down(mobile-medium) {
       padding: 24px 0 32px;
       margin: 10vh 5px 40px 5px;
       min-width: calc(320px - 10px);

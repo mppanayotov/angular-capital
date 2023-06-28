@@ -1,28 +1,35 @@
+@import 'index';
+
 .mat-mdc-paginator-range-actions {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile-medium) {
     display: block !important;
     text-align: center;
     width: 100%;
   }
 }
 .mat-mdc-paginator-range-label {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile-medium) {
     margin: 0 0 8px 0 !important;
   }
 }
 .mat-mdc-paginator-page-size {
-  @media (max-width: 767px) {
+  @include breakpoint-down(mobile-medium) {
     margin: 8px auto 0 auto !important;
   }
 }
+.mat-mdc-paginator-container {
+  @include breakpoint-down(mobile) {
+    justify-content: center !important;
+  }
+}
 .cdk-overlay-pane {
-  @media (max-width: 767px) {
+  @include breakpoint-down(tablet) {
     max-width: calc(100vw - 40px) !important;
   }
 }
 .mat-mdc-dialog-title,
 .mat-mdc-dialog-content {
-  @media (max-width: 767px) {
+  @include breakpoint-down(tablet) {
     padding-left: 12px !important;
     padding-right: 12px !important;
   }

@@ -9,6 +9,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { RecordListTableRecordsModule } from '@capital/record-list/table-records';
+import { SharedHeaderModule } from '@capital/shared/header';
+import { SharedFooterModule } from '@capital/shared/footer';
 
 @NgModule({
   imports: [
@@ -20,6 +22,8 @@ import { RecordListTableRecordsModule } from '@capital/record-list/table-records
     MatButtonModule,
     MatDialogModule,
     RecordListTableRecordsModule,
+    SharedHeaderModule,
+    SharedFooterModule,
   ],
   declarations: [RecordListPageComponent],
   exports: [RecordListPageComponent],

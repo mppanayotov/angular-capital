@@ -1,9 +1,9 @@
 {
   "name": "capital-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
   "sourceRoot": "apps/capital-e2e/src",
   "tags": ["scope:capital", "type:e2e"],
-  "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",

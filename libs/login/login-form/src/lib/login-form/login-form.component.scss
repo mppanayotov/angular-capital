@@ -1,17 +1,17 @@
+@import 'index';
+
 mat-form-field {
   width: 100%;
 }
-
 mat-form-field + button {
   margin-top: 16px;
 
-  @media (max-width: 767px) {
+  @include breakpoint-down(tablet) {
     margin-top: 8px;
   }
 }
-
 button {
-  @media (max-width: 767px) {
+  @include breakpoint-down(tablet) {
     width: 100%;
   }
 }

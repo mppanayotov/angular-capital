@@ -36,10 +36,6 @@ export class RecordListPageComponent implements OnInit {
     });
   }
 
-  logout(): void {
-    this.authService.logout();
-  }
-
   handleOpenViewDialog(row: RecordsEntity): void {
     this.dialog.open(DialogViewRecordComponent, {
       data: row,

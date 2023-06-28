@@ -1,41 +1,41 @@
-<div class="record-list-page">
-  <div class="shell">
-    <button mat-raised-button color="primary" (click)="logout()">
-      <mat-icon>logout</mat-icon>
-      Logout
-    </button>
-    <div class="record-list-page__head">
-      <button
-        *ngIf="role === 'admin'"
-        mat-fab
-        color="primary"
-        (click)="openAddDialog()"
-      >
-        <mat-icon>add</mat-icon>
-      </button>
-      <button
-        *ngIf="role === 'admin'"
-        mat-raised-button
-        color="primary"
-        (click)="openAddDialog()"
-      >
-        <mat-icon>add</mat-icon>
-        Add Record
-      </button>
-      <mat-form-field>
-        <mat-label>Type to filter the table</mat-label>
-        <input matInput #filter />
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
+<capital-header></capital-header>
+<div class="main">
+  <div class="record-list-page">
+    <div class="shell">
+      <div class="record-list-page__head">
+        <button
+          *ngIf="role === 'admin'"
+          mat-fab
+          color="primary"
+          (click)="openAddDialog()"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+        <button
+          *ngIf="role === 'admin'"
+          mat-raised-button
+          color="primary"
+          (click)="openAddDialog()"
+        >
+          <mat-icon>add</mat-icon>
+          Add Record
+        </button>
+        <mat-form-field>
+          <mat-label>Type to filter the table</mat-label>
+          <input matInput #filter />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+      <capital-table-records
+        [filter]="filter.value"
+        [records]="records"
+        [displayedColumns]="['name', 'department', 'salary', 'actions']"
+        [role]="role"
+        (openViewDialogEvent)="handleOpenViewDialog($event)"
+        (openEditDialogEvent)="handleOpenEditDialog($event)"
+        (openDeleteDialogEvent)="handleOpenDeleteDialog($event)"
+      ></capital-table-records>
     </div>
-    <capital-table-records
-      [filter]="filter.value"
-      [records]="records"
-      [displayedColumns]="['name', 'department', 'salary', 'actions']"
-      [role]="role"
-      (openViewDialogEvent)="handleOpenViewDialog($event)"
-      (openEditDialogEvent)="handleOpenEditDialog($event)"
-      (openDeleteDialogEvent)="handleOpenDeleteDialog($event)"
-    ></capital-table-records>
   </div>
 </div>
+<capital-footer></capital-footer>

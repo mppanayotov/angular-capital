@@ -1,8 +1,7 @@
 //Variables
-
 $font-size-base: 14px;
 $font-weight-base: 400;
-$line-height-base: 1.3;
+$line-height-base: 1.2;
 
 $ff-sans-serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $ff-serif: Georgia, 'Times New Roman', Times, serif;
@@ -11,12 +10,18 @@ $shell-max-width: 1400px;
 $shell-gutter: 20px;
 $shell-gutter-mobile: 10px;
 
+$header-height: 64px;
+$header-height-mobile-medium: 56px;
+
+$footer-height: 96px;
+$footer-height-tablet: 88px;
+$footer-height-mobile-medium: 134px;
+
 $breakpoints: (
   mobile-small: 374px,
-  mobile-medium: 575px,
+  mobile-medium: 599px,
   mobile: 767px,
   tablet: 1024px,
   small-desktop: 1199px,
-  medium-desktop: 1311px,
-  large-desktop: 1439px,
+  large-desktop: 1440px,
 );
