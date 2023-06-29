@@ -1,6 +1,5 @@
 FROM node:lts-alpine
-RUN mkdir /project
-WORKDIR /project
+WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
