@@ -5,6 +5,9 @@
         <mat-icon>menu</mat-icon>
       </button>
       <h2>Capital</h2>
+      <h3 *ngIf="expirationTimer$ | async as timer">
+        <span>Session expires in: </span>{{ timer }}
+      </h3>
       <button
         mat-raised-button
         color="primary"

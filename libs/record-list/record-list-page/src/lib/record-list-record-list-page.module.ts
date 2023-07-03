@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RecordListTableRecordsModule } from '@capital/record-list/table-records';
 import { SharedHeaderModule } from '@capital/shared/header';
 import { SharedFooterModule } from '@capital/shared/footer';
@@ -21,6 +22,7 @@ import { SharedFooterModule } from '@capital/shared/footer';
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
+    MatSnackBarModule,
     RecordListTableRecordsModule,
     SharedHeaderModule,
     SharedFooterModule,

@@ -1,8 +1,9 @@
+import { formatDate } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { Observable, interval } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -35,9 +36,10 @@ export class AuthService {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
     const exp = localStorage.getItem('exp');
-    const currentTime = Math.floor(Date.now() / 1000);
+    const currentTime = Date.now();
+    const notExpired = currentTime < Number(exp);
 
-    return !!(token && role && currentTime < Number(exp));
+    return !!(token && role && notExpired);
   }
 
   // Return user's role
@@ -104,5 +106,23 @@ export class AuthService {
     localStorage.setItem('token', apiResponse.token);
     localStorage.setItem('role', apiResponse.role);
     localStorage.setItem('exp', apiResponse.exp);
+  }
+
+  // Return the time left until the session expires
+  expirationTimer(): Observable<string> {
+    const exp = localStorage.getItem('exp');
+
+    return interval(1000).pipe(
+      map(() => {
+        const result = new Date(Number(exp) - Date.now());
+
+        if (result.getMilliseconds() > 0) {
+          return formatDate(result, 'mm:ss', 'en-US');
+        } else {
+          this.logout();
+          return 'Expired';
+        }
+      })
+    );
   }
 }

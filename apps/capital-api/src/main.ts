@@ -35,7 +35,7 @@ app.post('/api/login', (req, res) => {
   // Perform your validation logic here, such as checking against a database
   // If valid, generate a JWT token and send it back to the client
   if (user) {
-    const expirationTime = Math.floor(Date.now() / 1000) + 3600; // Expiration time set to one hour from now
+    const expirationTime = Date.now() + 3600000; // Expiration time set to one hour from now
     const token = jwt.sign(
       { username, role: user.role, exp: expirationTime },
       'your_secret_key'

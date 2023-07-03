@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecordsEntity, RecordsEntityWithoutId } from '@capital/shared/records';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogAddRecordComponent } from '@capital/record-list/dialog-add-record';
 import { DialogDeleteRecordComponent } from '@capital/record-list/dialog-delete-record';
 import { DialogEditRecordComponent } from '@capital/record-list/dialog-edit-record';
@@ -24,6 +25,7 @@ export class RecordListPageComponent implements OnInit {
     private router: Router,
     private recordsService: RecordsService,
     private authService: AuthService,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {}
 
@@ -80,13 +82,22 @@ export class RecordListPageComponent implements OnInit {
 
   onAdd(addDialogResult: RecordsEntityWithoutId): void {
     this.recordsService.addRecord(addDialogResult);
+    this.snackBar.open(`Added new record`, undefined, {
+      duration: 2000,
+    });
   }
 
   onEdit(editedRecord: RecordsEntity): void {
     this.recordsService.updateRecord(editedRecord);
+    this.snackBar.open(`Record updated`, undefined, {
+      duration: 2000,
+    });
   }
 
   onDelete(recordId: number): void {
     this.recordsService.deleteRecord(recordId);
+    this.snackBar.open(`Record deleted`, undefined, {
+      duration: 2000,
+    });
   }
 }

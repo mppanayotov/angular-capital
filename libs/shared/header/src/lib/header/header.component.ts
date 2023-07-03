@@ -8,6 +8,7 @@ import { AuthService } from '@capital/services/auth-service';
 })
 export class HeaderComponent {
   role = this.authService.role();
+  expirationTimer$ = this.authService.expirationTimer();
 
   constructor(private authService: AuthService) {}
 
