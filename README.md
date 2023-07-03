@@ -29,6 +29,7 @@
 ## Start the app
 
 To start both backend API and frontend app run `npm start`. Open your browser and navigate to http://localhost:4200/.
+(Or build a docker image using `Dockerfile` and run it)
 
 To start dep-graph run `npm dep-graph`. Open your browser and navigate to http://localhost:4211/projects/all?groupByFolder=true.
 
