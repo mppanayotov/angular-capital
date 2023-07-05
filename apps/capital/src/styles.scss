@@ -23,8 +23,9 @@
   }
 }
 .cdk-overlay-pane {
-  @include breakpoint-down(tablet) {
-    max-width: calc(100vw - 40px) !important;
+  @include breakpoint-down(small-desktop) {
+    width: 960px;
+    max-width: calc(100vw - #{$shell-gutter} * 2) !important;
   }
 }
 .mat-mdc-dialog-title,

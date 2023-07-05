@@ -1,4 +1,27 @@
-<h1 mat-dialog-title>View record</h1>
+<h1 mat-dialog-title>
+  View record
+
+  <a
+    mat-icon-button
+    matSuffix
+    [cdkCopyToClipboard]="
+      data.name +
+      '\n' +
+      data.department +
+      '\n' +
+      data.email +
+      '\n' +
+      data.phone +
+      '\n' +
+      data.address +
+      '\n' +
+      data.salary
+    "
+    [matTooltip]="'Copy all data'"
+  >
+    <mat-icon>copy_all</mat-icon>
+  </a>
+</h1>
 <div mat-dialog-content>
   <form>
     <mat-form-field>
@@ -10,6 +33,14 @@
         aria-readonly="true"
         readonly
       />
+      <a
+        mat-icon-button
+        matSuffix
+        [cdkCopyToClipboard]="data.name"
+        [matTooltip]="'Copy name data'"
+      >
+        <mat-icon>content_copy</mat-icon>
+      </a>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Department</mat-label>
@@ -20,6 +51,14 @@
         aria-readonly="true"
         readonly
       />
+      <a
+        mat-icon-button
+        matSuffix
+        [cdkCopyToClipboard]="data.department"
+        [matTooltip]="'Copy department data'"
+      >
+        <mat-icon>content_copy</mat-icon>
+      </a>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Email</mat-label>
@@ -30,6 +69,14 @@
         aria-readonly="true"
         readonly
       />
+      <a
+        mat-icon-button
+        matSuffix
+        [cdkCopyToClipboard]="data.email"
+        [matTooltip]="'Copy email data'"
+      >
+        <mat-icon>content_copy</mat-icon>
+      </a>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Phone</mat-label>
@@ -40,6 +87,14 @@
         aria-readonly="true"
         readonly
       />
+      <a
+        mat-icon-button
+        matSuffix
+        [cdkCopyToClipboard]="data.phone"
+        [matTooltip]="'Copy phone data'"
+      >
+        <mat-icon>content_copy</mat-icon>
+      </a>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Address</mat-label>
@@ -50,6 +105,14 @@
         aria-readonly="true"
         readonly
       />
+      <a
+        mat-icon-button
+        matSuffix
+        [cdkCopyToClipboard]="data.address"
+        [matTooltip]="'Copy address data'"
+      >
+        <mat-icon>content_copy</mat-icon>
+      </a>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Salary</mat-label>
@@ -60,6 +123,14 @@
         aria-readonly="true"
         readonly
       />
+      <a
+        mat-icon-button
+        matSuffix
+        [cdkCopyToClipboard]="data.salary"
+        [matTooltip]="'Copy salary data'"
+      >
+        <mat-icon>content_copy</mat-icon>
+      </a>
     </mat-form-field>
   </form>
 </div>
