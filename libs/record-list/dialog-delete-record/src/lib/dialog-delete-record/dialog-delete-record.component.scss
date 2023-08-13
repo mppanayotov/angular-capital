@@ -4,6 +4,10 @@
   width: 646px;
   max-width: 100%;
 
+  @include breakpoint-down(small-desktop) {
+    width: auto;
+  }
+
   .mat-mdc-dialog-actions {
     display: flex;
     justify-content: space-between;
