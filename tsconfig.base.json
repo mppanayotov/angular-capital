@@ -38,6 +38,9 @@
       "@capital/services/auth-service": [
         "libs/services/auth-service/src/index.ts"
       ],
+      "@capital/services/in-memory-data-service": [
+        "libs/services/in-memory-data-service/src/index.ts"
+      ],
       "@capital/services/records-service": [
         "libs/services/records-service/src/index.ts"
       ],

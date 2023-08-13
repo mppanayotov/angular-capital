@@ -20,7 +20,7 @@ import { catchError, tap } from 'rxjs/operators';
 export class RecordsService {
   // API base url
   private recordsUrl =
-    'https://my-json-server.typicode.com/mppanayotov/Immedis_front_end_internship_2022_hcm_milen_panayotov/records'; // URL to web api
+    'https://my-json-server.typicode.com/mppanayotov/angular-capital/records'; // URL to web api
 
   // Base http headers
   httpOptions = {
