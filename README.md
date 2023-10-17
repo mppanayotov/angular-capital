@@ -110,7 +110,7 @@ In the project root folder are located scripts for running multiple targets and 
 
 **auth.service.ts** : Service that is responsible for user's authentication and authorization status. This service handles user's permissions regarding route navigation, localstorage information and communicating with the local backed API.
 
-**apps/capital-api/src/main.ts** : Provides basic backend functions. Database is string array. Signs and verifies JwT tokens. Returns user role which is used to further define user permissions.
+**apps/capital-api-auth/src/main.ts** : Provides basic backend functions. Database is string array. Signs and verifies JwT tokens. Returns user role which is used to further define user permissions.
 
 ---
 

@@ -1,15 +1,15 @@
 {
-  "name": "capital-api-e2e",
+  "name": "capital-api-auth-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "tags": ["scope:capital-api", "type:e2e"],
-  "implicitDependencies": ["capital-api"],
+  "tags": ["scope:capital-api-auth", "type:e2e"],
+  "implicitDependencies": ["capital-api-auth"],
   "targets": {
     "e2e": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
       "options": {
-        "jestConfig": "apps/capital-api-e2e/jest.config.ts",
+        "jestConfig": "apps/capital-api-auth-e2e/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -17,7 +17,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/capital-api-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/capital-api-auth-e2e/**/*.{js,ts}"]
       }
     }
   }

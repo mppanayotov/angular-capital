@@ -11,12 +11,19 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { SharedRecordsModule } from '@capital/shared/records';
 import { RecordsService } from '@capital/services/records-service';
+import { InMemoryDataService } from '@capital/services/in-memory-data-service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      apiBase: 'api-records',
+      passThruUnknownUrl: true,
+      dataEncapsulation: false,
+    }),
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     BrowserAnimationsModule,
     StoreModule.forRoot(

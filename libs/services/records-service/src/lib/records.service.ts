@@ -19,8 +19,7 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class RecordsService {
   // API base url
-  private recordsUrl =
-    'https://my-json-server.typicode.com/mppanayotov/angular-capital/records'; // URL to web api
+  private recordsUrl = 'api-records/records'; // URL to web api
 
   // Base http headers
   httpOptions = {
@@ -107,23 +106,20 @@ export class RecordsService {
   // Post record to server and add to store
   addRecord(newRecordData: RecordsEntityWithoutId): void {
     const newRecord = new newRecordTemplate(this.genId(), newRecordData);
-    this.postRecordToServer(newRecord).subscribe(() =>
-      this.store.dispatch(addRecord({ record: newRecord }))
-    );
+    this.store.dispatch(addRecord({ record: newRecord }));
+    this.postRecordToServer(newRecord).subscribe();
   }
 
   // Put record on server and update on store
   updateRecord(editedRecord: RecordsEntity): void {
-    this.putRecordOnServer(editedRecord).subscribe(() =>
-      this.store.dispatch(updateRecord({ record: editedRecord }))
-    );
+    this.store.dispatch(updateRecord({ record: editedRecord }));
+    this.putRecordOnServer(editedRecord).subscribe();
   }
 
   // Delete record from server and remove from store
   deleteRecord(recordId: number): void {
-    this.deleteRecordFromServer(recordId).subscribe(() =>
-      this.store.dispatch(removeRecord({ recordId }))
-    );
+    this.store.dispatch(removeRecord({ recordId }));
+    this.deleteRecordFromServer(recordId).subscribe();
   }
 
   // Generate new ID depending on the currently existing entries

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx run-many -t serve --host 0.0.0.0 --parallel=3",
-    "dep-graph": "nx dep-graph --watch",
+    "dep-graph": "nx dep-graph",
     "build": "nx run-many -t build --parallel=3"
   },
   "private": true,

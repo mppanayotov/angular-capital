@@ -20,15 +20,17 @@ const usersDatabase = [
   { username: 'user', password: 'user', role: 'user' },
 ];
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to capital-api!' });
+// API base url
+const apiUrl = '/api-auth'; // URL to web api
+
+app.get(apiUrl, (req, res) => {
+  res.send({ message: 'Welcome to capital-api-auth-auth!' });
 });
 
 // Login endpoint
-app.post('/api/login', (req, res) => {
+app.post(`${apiUrl}/login`, (req, res) => {
   // Validate user credentials (e.g., check against a database)
   const { username, password } = req.body;
-
   const user = usersDatabase.find(
     (u) => u.username === username && u.password === password
   );
@@ -51,7 +53,7 @@ app.post('/api/login', (req, res) => {
 });
 
 // Records endpoint(protected). Verify user token.
-app.get('/api/record-list', verifyToken, (req, res) => {
+app.get(`${apiUrl}/record-list`, verifyToken, (req, res) => {
   // The user is authorized, so you can return protected data
   res.json({ message: 'Protected records data' });
 });
@@ -71,6 +73,6 @@ function verifyToken(req, res, next) {
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
+  console.log(`Listening at http://localhost:${port}${apiUrl}`);
 });
 server.on('error', console.error);

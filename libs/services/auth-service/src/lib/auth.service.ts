@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class AuthService {
   // API base url
-  private apiUrl = '/api';
+  private apiUrl = '/api-auth';
 
   // Base http headers
   httpOptions = {
