@@ -29,6 +29,17 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Phone</mat-label>
+      <capital-input-phone
+        placeholder="Phone"
+        formControlName="phone"
+        required
+      ></capital-input-phone>
+      <mat-error *ngIf="form.controls.phone.invalid">{{
+        getErrorMessage(form.controls.phone, 'phone')
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
       <input matInput placeholder="Phone" formControlName="phone" required />
       <mat-error *ngIf="form.controls.phone.invalid">{{
         getErrorMessage(form.controls.phone, 'phone')
