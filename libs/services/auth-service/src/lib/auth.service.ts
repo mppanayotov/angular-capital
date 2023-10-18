@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthService {
-  // API base url
+  // Auth API base url
   private apiUrl = '/api-auth';
 
   // Base http headers

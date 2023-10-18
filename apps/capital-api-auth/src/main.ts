@@ -20,7 +20,7 @@ const usersDatabase = [
   { username: 'user', password: 'user', role: 'user' },
 ];
 
-// API base url
+// Auth API base url
 const apiUrl = '/api-auth'; // URL to web api
 
 app.get(apiUrl, (req, res) => {

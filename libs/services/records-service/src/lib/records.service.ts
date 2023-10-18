@@ -18,8 +18,8 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class RecordsService {
-  // API base url
-  private recordsUrl = 'api-records/records'; // URL to web api
+  // Records API base url
+  private recordsUrl = 'api-records/records';
 
   // Base http headers
   httpOptions = {
