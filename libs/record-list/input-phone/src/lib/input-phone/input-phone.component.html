@@ -1,48 +1,42 @@
-<mat-form-field>
-  <mat-label>Phone</mat-label>
-  <input matInput placeholder="Phone" formControlName="phone" required />
-  <mat-error *ngIf="form.controls.phone.invalid">{{
-    getErrorMessage(form.controls.phone, 'phone')
-  }}</mat-error>
-</mat-form-field>
+<!-- <input matInput placeholder="Phone" formControlName="phone" required /> -->
 
-<!-- <div
+<div
   role="group"
   class="example-tel-input-container"
-  [formGroup]="parts"
-  [attr.aria-labelledby]="_formField.getLabelId()"
+  [formGroup]="form"
+  [attr.aria-labelledby]="formField.getLabelId()"
   (focusin)="onFocusIn($event)"
   (focusout)="onFocusOut($event)"
 >
   <input
     class="example-tel-input-element"
-    formControlName="area"
+    formControlName="part1"
     size="3"
     maxLength="3"
-    aria-label="Area code"
-    (input)="_handleInput(parts.controls.area, exchange)"
-    #area
+    aria-label="Part1 label"
+    (input)="handleInput(form.controls.part1, part2)"
+    #part1
   />
   <span class="example-tel-input-spacer">&ndash;</span>
   <input
     class="example-tel-input-element"
-    formControlName="exchange"
+    formControlName="part2"
     maxLength="3"
     size="3"
-    aria-label="Exchange code"
-    (input)="_handleInput(parts.controls.exchange, subscriber)"
-    (keyup.backspace)="autoFocusPrev(parts.controls.exchange, area)"
-    #exchange
+    aria-label="Part2 label"
+    (input)="handleInput(form.controls.part2, part3)"
+    (keyup.backspace)="autoFocusPrev(form.controls.part2, part1)"
+    #part2
   />
   <span class="example-tel-input-spacer">&ndash;</span>
   <input
     class="example-tel-input-element"
-    formControlName="subscriber"
+    formControlName="part3"
     maxLength="4"
     size="4"
-    aria-label="Subscriber number"
-    (input)="_handleInput(parts.controls.subscriber)"
-    (keyup.backspace)="autoFocusPrev(parts.controls.subscriber, exchange)"
-    #subscriber
+    aria-label="Part3 label"
+    (input)="handleInput(form.controls.part3)"
+    (keyup.backspace)="autoFocusPrev(form.controls.part3, part2)"
+    #part3
   />
-</div> -->
+</div>
