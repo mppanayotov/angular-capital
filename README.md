@@ -19,6 +19,7 @@
 # Nx Graph
 
 <img src="graph.jpg">
+<img src="graph.jpg">
 
 # Capital
 
