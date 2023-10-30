@@ -6,7 +6,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { RecordListInputPhoneModule } from '@capital/record-list/input-phone';
 
 @NgModule({
   imports: [
@@ -17,7 +16,6 @@ import { RecordListInputPhoneModule } from '@capital/record-list/input-phone';
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
-    RecordListInputPhoneModule,
   ],
   declarations: [DialogAddRecordComponent],
   exports: [DialogAddRecordComponent],

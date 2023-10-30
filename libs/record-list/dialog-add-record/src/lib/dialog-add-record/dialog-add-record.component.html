@@ -29,17 +29,6 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Phone</mat-label>
-      <capital-input-phone
-        placeholder="Phone-alt"
-        formControlName="phone-alt"
-        required
-      ></capital-input-phone>
-      <mat-error *ngIf="form.controls.phoneAlt.invalid">{{
-        getErrorMessage(form.controls.phoneAlt, 'phone-alt')
-      }}</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Phone</mat-label>
       <input matInput placeholder="Phone" formControlName="phone" required />
       <mat-error *ngIf="form.controls.phone.invalid">{{
         getErrorMessage(form.controls.phone, 'phone')
