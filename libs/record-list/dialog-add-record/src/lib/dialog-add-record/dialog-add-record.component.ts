@@ -19,6 +19,13 @@ export class DialogAddRecordComponent {
         Validators.pattern('^\\+\\d{3} \\(\\d{3}\\) \\d{3}-\\d{4}$'),
       ],
     ],
+    phoneAlt: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern('^\\+\\d{3} \\(\\d{3}\\) \\d{3}-\\d{4}$'),
+      ],
+    ],
     address: ['', Validators.required],
     salary: [
       '',

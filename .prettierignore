@@ -3,3 +3,4 @@
 /coverage
 .angular
 db.json.ts
+/.nx/cache

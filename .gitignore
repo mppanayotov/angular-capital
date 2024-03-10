@@ -38,8 +38,11 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#Angular cache
+# Angular cache
 .angular
 
-#WSL
+# WSL
 *.Identifier
+
+# Nx Cache
+.nx/cache
