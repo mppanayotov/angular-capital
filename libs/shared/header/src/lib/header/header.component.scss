@@ -21,6 +21,9 @@ h3 {
 h3 span {
   font-weight: 300;
 }
+h3 + button {
+    margin: 0 16px;
+}
 @keyframes fade-in {
   0% {
     opacity: 0;
