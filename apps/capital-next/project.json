@@ -3,25 +3,17 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/capital-next",
   "projectType": "application",
-  "tags": [
-    "scope:capital-next",
-    "type:app"
-  ],
+  "tags": ["scope:capital-next", "type:app"],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/capital-next/jest.config.ts"
       }
     },
     "build": {
-      "dependsOn": [
-        "^build",
-        "build-custom-server"
-      ]
+      "dependsOn": ["^build", "build-custom-server"]
     },
     "build-custom-server": {
       "executor": "@nx/js:swc",

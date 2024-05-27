@@ -15,7 +15,7 @@ import next from 'next';
 // - The fallback `__dirname` is for production builds.
 // - Feel free to change this to suit your needs.
 
-const dir = process.env.NX_NEXT_DIR || path.join(__dirname, '../../../../apps/capital-next') 
+const dir = process.env.NX_NEXT_DIR || path.join(__dirname, '../../../../apps/capital-next');
 const dev = process.env.NODE_ENV === 'development';
 
 // HTTP Server options:
@@ -36,11 +36,10 @@ async function main() {
 
   server.listen(port, hostname);
 
-  console.log(`[ ready ] on http://${hostname}:${port}`)
+  console.log(`[ ready ] on http://${hostname}:${port}`);
 }
 
 main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
