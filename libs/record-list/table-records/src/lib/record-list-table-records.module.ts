@@ -8,15 +8,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatTableModule,
-    MatIconModule,
-    MatPaginatorModule,
-    MatButtonModule,
-    MatSortModule,
-  ],
-  declarations: [TableRecordsComponent],
-  exports: [TableRecordsComponent],
+    imports: [CommonModule, MatTableModule, MatIconModule, MatPaginatorModule, MatButtonModule, MatSortModule],
+    declarations: [TableRecordsComponent],
+    exports: [TableRecordsComponent],
 })
 export class RecordListTableRecordsModule {}

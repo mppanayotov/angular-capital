@@ -1,22 +1,15 @@
 <div class="header mat-elevation-z6">
-  <nav>
-    <mat-toolbar color="primary">
-      <button mat-icon-button aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <h2>Capital</h2>
-      <h3 *ngIf="expirationTimer$ | async as timer">
-        <span>Session expires in: </span>{{ timer }}
-      </h3>
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="logout()"
-        aria-label="Logout icon-button with logout icon"
-      >
-        <mat-icon>logout</mat-icon>
-        Logout
-      </button>
-    </mat-toolbar>
-  </nav>
+    <nav>
+        <mat-toolbar color="primary">
+            <button mat-icon-button aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <h2>Capital</h2>
+            <h3 *ngIf="expirationTimer$ | async as timer"><span>Session expires in: </span>{{ timer }}</h3>
+            <button mat-raised-button color="primary" (click)="logout()" aria-label="Logout icon-button with logout icon">
+                <mat-icon>logout</mat-icon>
+                Logout
+            </button>
+        </mat-toolbar>
+    </nav>
 </div>

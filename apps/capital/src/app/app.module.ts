@@ -15,33 +15,33 @@ import { InMemoryDataService } from '@capital/services/in-memory-data-service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      apiBase: 'api-records',
-      passThruUnknownUrl: true,
-      dataEncapsulation: false,
-    }),
-    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
-    BrowserAnimationsModule,
-    StoreModule.forRoot(
-      {},
-      {
-        metaReducers: [],
-        runtimeChecks: {
-          strictActionImmutability: true,
-          strictStateImmutability: true,
-        },
-      }
-    ),
-    EffectsModule.forRoot([]),
-    StoreRouterConnectingModule.forRoot(),
-    StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
-    SharedRecordsModule,
-  ],
-  providers: [RecordsService],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+            apiBase: 'api-records',
+            passThruUnknownUrl: true,
+            dataEncapsulation: false,
+        }),
+        RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+        BrowserAnimationsModule,
+        StoreModule.forRoot(
+            {},
+            {
+                metaReducers: [],
+                runtimeChecks: {
+                    strictActionImmutability: true,
+                    strictStateImmutability: true,
+                },
+            }
+        ),
+        EffectsModule.forRoot([]),
+        StoreRouterConnectingModule.forRoot(),
+        StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
+        SharedRecordsModule,
+    ],
+    providers: [RecordsService],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

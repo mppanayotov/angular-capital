@@ -14,20 +14,20 @@ import { SharedHeaderModule } from '@capital/shared/header';
 import { SharedFooterModule } from '@capital/shared/footer';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(recordListRecordListPageRoutes),
-    MatInputModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    RecordListTableRecordsModule,
-    SharedHeaderModule,
-    SharedFooterModule,
-  ],
-  declarations: [RecordListPageComponent],
-  exports: [RecordListPageComponent],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(recordListRecordListPageRoutes),
+        MatInputModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        RecordListTableRecordsModule,
+        SharedHeaderModule,
+        SharedFooterModule,
+    ],
+    declarations: [RecordListPageComponent],
+    exports: [RecordListPageComponent],
 })
 export class RecordListRecordListPageModule {}

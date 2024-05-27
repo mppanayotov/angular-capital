@@ -1,53 +1,35 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2020", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@capital/login/login-form": ["libs/login/login-form/src/index.ts"],
-      "@capital/login/login-page": ["libs/login/login-page/src/index.ts"],
-      "@capital/record-list/dialog-add-record": [
-        "libs/record-list/dialog-add-record/src/index.ts"
-      ],
-      "@capital/record-list/dialog-delete-record": [
-        "libs/record-list/dialog-delete-record/src/index.ts"
-      ],
-      "@capital/record-list/dialog-edit-record": [
-        "libs/record-list/dialog-edit-record/src/index.ts"
-      ],
-      "@capital/record-list/dialog-view-record": [
-        "libs/record-list/dialog-view-record/src/index.ts"
-      ],
-      "@capital/record-list/record-list-page": [
-        "libs/record-list/record-list-page/src/index.ts"
-      ],
-      "@capital/record-list/table-records": [
-        "libs/record-list/table-records/src/index.ts"
-      ],
-      "@capital/services/auth-service": [
-        "libs/services/auth-service/src/index.ts"
-      ],
-      "@capital/services/in-memory-data-service": [
-        "libs/services/in-memory-data-service/src/index.ts"
-      ],
-      "@capital/services/records-service": [
-        "libs/services/records-service/src/index.ts"
-      ],
-      "@capital/shared/footer": ["libs/shared/footer/src/index.ts"],
-      "@capital/shared/header": ["libs/shared/header/src/index.ts"],
-      "@capital/shared/records": ["libs/shared/records/src/index.ts"]
-    }
-  },
-  "exclude": ["node_modules", "tmp"]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "lib": ["es2020", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@capital/login/login-form": ["libs/login/login-form/src/index.ts"],
+            "@capital/login/login-page": ["libs/login/login-page/src/index.ts"],
+            "@capital/record-list/dialog-add-record": ["libs/record-list/dialog-add-record/src/index.ts"],
+            "@capital/record-list/dialog-delete-record": ["libs/record-list/dialog-delete-record/src/index.ts"],
+            "@capital/record-list/dialog-edit-record": ["libs/record-list/dialog-edit-record/src/index.ts"],
+            "@capital/record-list/dialog-view-record": ["libs/record-list/dialog-view-record/src/index.ts"],
+            "@capital/record-list/record-list-page": ["libs/record-list/record-list-page/src/index.ts"],
+            "@capital/record-list/table-records": ["libs/record-list/table-records/src/index.ts"],
+            "@capital/services/auth-service": ["libs/services/auth-service/src/index.ts"],
+            "@capital/services/in-memory-data-service": ["libs/services/in-memory-data-service/src/index.ts"],
+            "@capital/services/records-service": ["libs/services/records-service/src/index.ts"],
+            "@capital/shared/footer": ["libs/shared/footer/src/index.ts"],
+            "@capital/shared/header": ["libs/shared/header/src/index.ts"],
+            "@capital/shared/records": ["libs/shared/records/src/index.ts"]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
 }

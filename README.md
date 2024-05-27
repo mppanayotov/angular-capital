@@ -1,20 +1,20 @@
-- [Nx Graph](#nx-graph)
-- [Capital](#capital)
-  - [Start the app](#start-the-app)
-  - [About](#about)
-    - [Tech stack](#tech-stack)
-      - [Frontend](#frontend)
-      - [Backend](#backend)
-      - [Development](#development)
-    - [Project Navigation](#project-navigation)
-    - [Key functionality](#key-functionality)
-    - [Project Notes](#project-notes)
-  - [Generate code](#generate-code)
-  - [Running tasks](#running-tasks)
-  - [Want better Editor Integration?](#want-better-editor-integration)
-  - [Ready to deploy?](#ready-to-deploy)
-  - [Set up CI!](#set-up-ci)
-  - [Connect with us!](#connect-with-us)
+-   [Nx Graph](#nx-graph)
+-   [Capital](#capital)
+    -   [Start the app](#start-the-app)
+    -   [About](#about)
+        -   [Tech stack](#tech-stack)
+            -   [Frontend](#frontend)
+            -   [Backend](#backend)
+            -   [Development](#development)
+        -   [Project Navigation](#project-navigation)
+        -   [Key functionality](#key-functionality)
+        -   [Project Notes](#project-notes)
+    -   [Generate code](#generate-code)
+    -   [Running tasks](#running-tasks)
+    -   [Want better Editor Integration?](#want-better-editor-integration)
+    -   [Ready to deploy?](#ready-to-deploy)
+    -   [Set up CI!](#set-up-ci)
+    -   [Connect with us!](#connect-with-us)
 
 # Nx Graph
 
@@ -41,8 +41,8 @@ Happy coding!
 
 Login credentials:
 
-- **`username: 'admin', password: 'admin'`** (role: 'admin')
-- **`username: 'user', password: 'user'`** (role: 'user')
+-   **`username: 'admin', password: 'admin'`** (role: 'admin')
+-   **`username: 'user', password: 'user'`** (role: 'user')
 
 ---
 
@@ -52,25 +52,25 @@ Login credentials:
 
 > Angular
 >
-> - NgRx store
-> - Angular Material
-> - SCSS
+> -   NgRx store
+> -   Angular Material
+> -   SCSS
 
 #### Backend
 
 > NodeJs
 >
-> - Express
-> - JwT
+> -   Express
+> -   JwT
 
 #### Development
 
 > Nx
 >
-> - Monorepo
-> - Jest
-> - Cypress
-> - ESLint
+> -   Monorepo
+> -   Jest
+> -   Cypress
+> -   ESLint
 >
 > VS Code
 >
@@ -88,15 +88,15 @@ In the project root folder are located scripts for running multiple targets and 
 
 ### Key functionality
 
-> - CRUD functions for managing a 'records' database.
-> - Search, sort and filter 'records' entries.
-> - Authentication and authorization for 'user'.
+> -   CRUD functions for managing a 'records' database.
+> -   Search, sort and filter 'records' entries.
+> -   Authentication and authorization for 'user'.
 
-> - Angular module lazy loading
-> - NgRx 'forFeature'
-> - Routing 'forChild'
-> - Globally available SASS variables/functions
-> - Basic form validation
+> -   Angular module lazy loading
+> -   NgRx 'forFeature'
+> -   Routing 'forChild'
+> -   Globally available SASS variables/functions
+> -   Basic form validation
 
 ---
 
@@ -156,12 +156,12 @@ Just run `nx build demoapp` to build the application. The build artifacts will b
 
 Nx comes with local caching already built-in (check your `nx.json`). On CI you might want to go a step further.
 
-- [Set up remote caching](https://nx.dev/core-features/share-your-cache)
-- [Set up task distribution across multiple machines](https://nx.dev/core-features/distribute-task-execution)
-- [Learn more how to setup CI](https://nx.dev/recipes/ci)
+-   [Set up remote caching](https://nx.dev/core-features/share-your-cache)
+-   [Set up task distribution across multiple machines](https://nx.dev/core-features/distribute-task-execution)
+-   [Learn more how to setup CI](https://nx.dev/recipes/ci)
 
 ## Connect with us!
 
-- [Join the community](https://nx.dev/community)
-- [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)
-- [Follow us on Twitter](https://twitter.com/nxdevtools)
+-   [Join the community](https://nx.dev/community)
+-   [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)
+-   [Follow us on Twitter](https://twitter.com/nxdevtools)

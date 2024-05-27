@@ -5,8 +5,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  imports: [CommonModule, MatDialogModule, MatButtonModule],
-  declarations: [DialogDeleteRecordComponent],
-  exports: [DialogDeleteRecordComponent],
+    imports: [CommonModule, MatDialogModule, MatButtonModule],
+    declarations: [DialogDeleteRecordComponent],
+    exports: [DialogDeleteRecordComponent],
 })
 export class RecordListDialogDeleteRecordModule {}

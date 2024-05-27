@@ -7,28 +7,23 @@ import { MatTableModule } from '@angular/material/table';
 import { RecordListPageComponent } from './record-list-page.component';
 
 describe('RecordListPageComponent', () => {
-  let component: RecordListPageComponent;
-  let fixture: ComponentFixture<RecordListPageComponent>;
+    let component: RecordListPageComponent;
+    let fixture: ComponentFixture<RecordListPageComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [RecordListPageComponent],
-      imports: [
-        NoopAnimationsModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatTableModule,
-      ],
-    }).compileComponents();
-  }));
+    beforeEach(waitForAsync(() => {
+        TestBed.configureTestingModule({
+            declarations: [RecordListPageComponent],
+            imports: [NoopAnimationsModule, MatPaginatorModule, MatSortModule, MatTableModule],
+        }).compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(RecordListPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(RecordListPageComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should compile', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should compile', () => {
+        expect(component).toBeTruthy();
+    });
 });

@@ -1,9 +1,9 @@
 {
-  "name": "shared-styles",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/shared/styles/src",
-  "prefix": "capital",
-  "tags": ["scope:shared", "type:styles"],
-  "projectType": "library",
-  "targets": {}
+    "name": "shared-styles",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/styles/src",
+    "prefix": "capital",
+    "tags": ["scope:shared", "type:styles"],
+    "projectType": "library",
+    "targets": {}
 }

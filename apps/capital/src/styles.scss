@@ -1,40 +1,40 @@
 @import 'index';
 
 .mat-mdc-paginator-range-actions {
-  @include breakpoint-down(mobile-medium) {
-    display: block !important;
-    text-align: center;
-    width: 100%;
-  }
+    @include breakpoint-down(mobile-medium) {
+        display: block !important;
+        text-align: center;
+        width: 100%;
+    }
 }
 .mat-mdc-paginator-range-label {
-  @include breakpoint-down(mobile-medium) {
-    margin: 0 0 8px 0 !important;
-  }
+    @include breakpoint-down(mobile-medium) {
+        margin: 0 0 8px 0 !important;
+    }
 }
 .mat-mdc-paginator-page-size {
-  @include breakpoint-down(mobile-medium) {
-    margin: 8px auto 0 auto !important;
-  }
+    @include breakpoint-down(mobile-medium) {
+        margin: 8px auto 0 auto !important;
+    }
 }
 .mat-mdc-paginator-container {
-  @include breakpoint-down(mobile) {
-    justify-content: center !important;
-  }
+    @include breakpoint-down(mobile) {
+        justify-content: center !important;
+    }
 }
 .cdk-overlay-pane {
-  @include breakpoint-down(small-desktop) {
-    width: 960px;
-    max-width: calc(100vw - #{$shell-gutter} * 2) !important;
-  }
+    @include breakpoint-down(small-desktop) {
+        width: 960px;
+        max-width: calc(100vw - #{$shell-gutter} * 2) !important;
+    }
 }
 .mat-mdc-dialog-title,
 .mat-mdc-dialog-content {
-  @include breakpoint-down(tablet) {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
+    @include breakpoint-down(tablet) {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
 }
 .mat-mdc-simple-snack-bar {
-  text-align: center;
+    text-align: center;
 }

@@ -1,216 +1,216 @@
 @import 'index';
 
 table {
-  width: 100%;
-  background: none;
-  table-layout: fixed;
+    width: 100%;
+    background: none;
+    table-layout: fixed;
 }
 table.hasMultipleActions {
-  td {
-    width: calc((100% - 180px) / 3);
+    td {
+        width: calc((100% - 180px) / 3);
 
-    @include breakpoint-down(mobile) {
-      width: 100%;
+        @include breakpoint-down(mobile) {
+            width: 100%;
+        }
     }
-  }
-  tr {
-    @include breakpoint-between(mobile-medium, mobile) {
-      min-height: 139px;
-    }
+    tr {
+        @include breakpoint-between(mobile-medium, mobile) {
+            min-height: 139px;
+        }
 
-    @include breakpoint-down(mobile-medium) {
-      min-height: 0;
+        @include breakpoint-down(mobile-medium) {
+            min-height: 0;
+        }
     }
-  }
-  .mat-mdc-row {
-    @include breakpoint-between(mobile-medium, mobile) {
-      min-height: 143px;
-    }
+    .mat-mdc-row {
+        @include breakpoint-between(mobile-medium, mobile) {
+            min-height: 143px;
+        }
 
-    @include breakpoint-down(mobile-medium) {
-      min-height: 0;
+        @include breakpoint-down(mobile-medium) {
+            min-height: 0;
+        }
     }
-  }
-  .mat-column-actions {
-    min-width: 180px;
-    width: 180px;
+    .mat-column-actions {
+        min-width: 180px;
+        width: 180px;
 
-    @include breakpoint-down(mobile-medium) {
-      width: 100%;
+        @include breakpoint-down(mobile-medium) {
+            width: 100%;
+        }
     }
-  }
-  .mat-mdc-header-row {
-    @include breakpoint-down(mobile) {
-      min-height: 0;
+    .mat-mdc-header-row {
+        @include breakpoint-down(mobile) {
+            min-height: 0;
+        }
     }
-  }
 }
 th {
-  @include breakpoint-down(mobile) {
-    display: inline-flex;
-    justify-content: center;
-    width: auto;
-    border-bottom: none;
-    padding-left: 0;
-    transition: opacity 0.3s ease-out;
-  }
+    @include breakpoint-down(mobile) {
+        display: inline-flex;
+        justify-content: center;
+        width: auto;
+        border-bottom: none;
+        padding-left: 0;
+        transition: opacity 0.3s ease-out;
+    }
 }
 th[aria-sort='none'] {
-  @include breakpoint-down(mobile) {
-    opacity: 0.6;
-  }
+    @include breakpoint-down(mobile) {
+        opacity: 0.6;
+    }
 }
 th:nth-last-child(2) {
-  @include breakpoint-down(mobile) {
-    padding-right: 0;
-  }
+    @include breakpoint-down(mobile) {
+        padding-right: 0;
+    }
 }
 th:first-child {
-  @include breakpoint-between(mobile-small, mobile) {
-    margin-left: 53px;
-  }
-  @include breakpoint-down(mobile-small) {
-    margin-left: auto;
-  }
+    @include breakpoint-between(mobile-small, mobile) {
+        margin-left: 53px;
+    }
+    @include breakpoint-down(mobile-small) {
+        margin-left: auto;
+    }
 }
 th:last-child {
-  @include breakpoint-down(mobile) {
-    display: none;
-  }
+    @include breakpoint-down(mobile) {
+        display: none;
+    }
 }
 td {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  width: calc((100% - 120px) / 3);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: calc((100% - 120px) / 3);
 
-  @include breakpoint-down(mobile) {
-    position: relative;
-    padding: 4px 196px 4px 112px;
-    display: block;
-    width: 100%;
-  }
+    @include breakpoint-down(mobile) {
+        position: relative;
+        padding: 4px 196px 4px 112px;
+        display: block;
+        width: 100%;
+    }
 
-  @include breakpoint-down(mobile-medium) {
-    padding-right: 8px;
-  }
+    @include breakpoint-down(mobile-medium) {
+        padding-right: 8px;
+    }
 }
 td:not(:last-child) {
-  @include breakpoint-down(mobile) {
-    border-bottom: none;
-  }
-
-  &:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 4px 8px;
-    display: none;
-    width: 112px;
-    content: attr(data-col);
-    font-weight: 500;
-    text-transform: capitalize;
-
     @include breakpoint-down(mobile) {
-      display: block;
+        border-bottom: none;
     }
-  }
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 4px 8px;
+        display: none;
+        width: 112px;
+        content: attr(data-col);
+        font-weight: 500;
+        text-transform: capitalize;
+
+        @include breakpoint-down(mobile) {
+            display: block;
+        }
+    }
 }
 td:last-child {
-  @include breakpoint-down(mobile) {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 160px;
-  }
-
-  @include breakpoint-down(mobile) {
-    border-bottom: none;
-  }
-
-  @include breakpoint-down(mobile-medium) {
-    position: relative;
-    width: 100%;
-  }
-}
-tr {
-  @include breakpoint-down(mobile) {
-    display: block;
-    height: auto !important;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  }
-}
-tr:last-child {
-  border-bottom: none;
-}
-button:nth-of-type(odd) {
-  @include breakpoint-down(mobile) {
-    display: none;
-  }
-}
-button:nth-of-type(even) {
-  display: none;
-  width: 100%;
-  margin-bottom: 6px;
-
-  @include breakpoint-down(mobile) {
-    display: inline-flex;
-  }
-}
-mat-paginator {
-  background: none;
-
-  @include breakpoint-down(mobile) {
-    margin-top: 8px;
-  }
-}
-.mat-mdc-header-row {
-  @include breakpoint-down(mobile) {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    padding-bottom: 8px;
-    margin-bottom: 12px;
-  }
-
-  &:before {
-    padding-right: 8px;
-    display: none;
-    content: 'Sort by: ';
-    font-weight: 500;
-    line-height: 22px;
-    text-transform: capitalize;
-    white-space: nowrap;
+    @include breakpoint-down(mobile) {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 160px;
+    }
 
     @include breakpoint-down(mobile) {
-      display: block;
+        border-bottom: none;
     }
-  }
+
+    @include breakpoint-down(mobile-medium) {
+        position: relative;
+        width: 100%;
+    }
+}
+tr {
+    @include breakpoint-down(mobile) {
+        display: block;
+        height: auto !important;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+}
+tr:last-child {
+    border-bottom: none;
+}
+button:nth-of-type(odd) {
+    @include breakpoint-down(mobile) {
+        display: none;
+    }
+}
+button:nth-of-type(even) {
+    display: none;
+    width: 100%;
+    margin-bottom: 6px;
+
+    @include breakpoint-down(mobile) {
+        display: inline-flex;
+    }
+}
+mat-paginator {
+    background: none;
+
+    @include breakpoint-down(mobile) {
+        margin-top: 8px;
+    }
+}
+.mat-mdc-header-row {
+    @include breakpoint-down(mobile) {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+    }
+
+    &:before {
+        padding-right: 8px;
+        display: none;
+        content: 'Sort by: ';
+        font-weight: 500;
+        line-height: 22px;
+        text-transform: capitalize;
+        white-space: nowrap;
+
+        @include breakpoint-down(mobile) {
+            display: block;
+        }
+    }
 }
 .mat-mdc-row {
-  @include breakpoint-between(mobile-medium, mobile) {
-    position: relative;
-  }
+    @include breakpoint-between(mobile-medium, mobile) {
+        position: relative;
+    }
 }
 .mat-column-actions {
-  text-align: center;
-  min-width: 120px;
-  width: 120px;
+    text-align: center;
+    min-width: 120px;
+    width: 120px;
 
-  @include breakpoint-down(mobile) {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-  }
+    @include breakpoint-down(mobile) {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
 }
 .mat-mdc-no-data-row td {
-  height: 65px;
-  font-style: italic;
+    height: 65px;
+    font-style: italic;
 
-  @include breakpoint-down(mobile) {
-    height: auto;
-    padding: 4px 8px;
-  }
+    @include breakpoint-down(mobile) {
+        height: auto;
+        padding: 4px 8px;
+    }
 }

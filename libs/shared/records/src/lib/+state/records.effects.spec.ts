@@ -9,31 +9,27 @@ import * as RecordsActions from './records.actions';
 import { RecordsEffects } from './records.effects';
 
 describe('RecordsEffects', () => {
-  let actions: Observable<Action>;
-  let effects: RecordsEffects;
+    let actions: Observable<Action>;
+    let effects: RecordsEffects;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [],
-      providers: [
-        RecordsEffects,
-        provideMockActions(() => actions),
-        provideMockStore(),
-      ],
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [],
+            providers: [RecordsEffects, provideMockActions(() => actions), provideMockStore()],
+        });
+
+        effects = TestBed.inject(RecordsEffects);
     });
 
-    effects = TestBed.inject(RecordsEffects);
-  });
+    describe('init$', () => {
+        it('should work', () => {
+            actions = hot('-a-|', { a: RecordsActions.initRecords() });
 
-  describe('init$', () => {
-    it('should work', () => {
-      actions = hot('-a-|', { a: RecordsActions.initRecords() });
+            const expected = hot('-a-|', {
+                a: RecordsActions.loadRecordsSuccess({ records: [] }),
+            });
 
-      const expected = hot('-a-|', {
-        a: RecordsActions.loadRecordsSuccess({ records: [] }),
-      });
-
-      expect(effects.init$).toBeObservable(expected);
+            expect(effects.init$).toBeObservable(expected);
+        });
     });
-  });
 });

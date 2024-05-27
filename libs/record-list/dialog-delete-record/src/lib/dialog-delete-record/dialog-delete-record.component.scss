@@ -1,15 +1,15 @@
 @import 'index';
 
 .dialog-delete-record {
-  width: 646px;
-  max-width: 100%;
+    width: 646px;
+    max-width: 100%;
 
-  @include breakpoint-down(small-desktop) {
-    width: auto;
-  }
+    @include breakpoint-down(small-desktop) {
+        width: auto;
+    }
 
-  .mat-mdc-dialog-actions {
-    display: flex;
-    justify-content: space-between;
-  }
+    .mat-mdc-dialog-actions {
+        display: flex;
+        justify-content: space-between;
+    }
 }
