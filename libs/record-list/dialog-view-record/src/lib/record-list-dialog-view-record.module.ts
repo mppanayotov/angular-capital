@@ -10,8 +10,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @NgModule({
-    imports: [CommonModule, MatDialogModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, MatTooltipModule, ClipboardModule],
-    declarations: [DialogViewRecordComponent],
-    exports: [DialogViewRecordComponent],
+  imports: [CommonModule, MatDialogModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatIconModule, MatTooltipModule, ClipboardModule],
+  declarations: [DialogViewRecordComponent],
+  exports: [DialogViewRecordComponent],
 })
 export class RecordListDialogViewRecordModule {}

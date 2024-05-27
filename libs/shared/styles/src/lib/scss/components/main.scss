@@ -1,15 +1,15 @@
 // Main
 .main {
-    position: relative;
-    padding-top: $header-height;
-    padding-bottom: $footer-height;
+  position: relative;
+  padding-top: $header-height;
+  padding-bottom: $footer-height;
 
-    @include breakpoint-down(tablet) {
-        padding-bottom: $footer-height-tablet;
-    }
+  @include breakpoint-down(tablet) {
+    padding-bottom: $footer-height-tablet;
+  }
 
-    @include breakpoint-down(mobile-medium) {
-        padding-top: $header-height-mobile-medium;
-        padding-bottom: $footer-height-mobile-medium;
-    }
+  @include breakpoint-down(mobile-medium) {
+    padding-top: $header-height-mobile-medium;
+    padding-bottom: $footer-height-mobile-medium;
+  }
 }

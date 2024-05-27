@@ -1,56 +1,56 @@
 <table mat-table matSort [dataSource]="dataSource" aria-label="Record list" [ngClass]="role === 'admin' ? 'hasMultipleActions' : ''">
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-        <td mat-cell *matCellDef="let row" data-col="name">{{ row.name }}</td>
-    </ng-container>
-    <!-- Department Column -->
-    <ng-container matColumnDef="department">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Department</th>
-        <td mat-cell *matCellDef="let row" data-col="department">
-            {{ row.department }}
-        </td>
-    </ng-container>
-    <!-- Salary Column -->
-    <ng-container matColumnDef="salary">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Salary</th>
-        <td mat-cell *matCellDef="let row" data-col="salary">{{ row.salary }}</td>
-    </ng-container>
-    <!-- Actions Column -->
-    <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef>Actions</th>
-        <td mat-cell *matCellDef="let row">
-            <button mat-icon-button color="primary" aria-label="View record" (click)="openViewDialog(row)">
-                <mat-icon>visibility</mat-icon>
-            </button>
-            <button mat-raised-button color="primary" (click)="openViewDialog(row)">
-                <mat-icon>visibility</mat-icon>
-                View Record
-            </button>
-            <button *ngIf="role === 'admin'" mat-icon-button color="primary" aria-label="Edit record" (click)="openEditDialog(row)">
-                <mat-icon>settings</mat-icon>
-            </button>
-            <button *ngIf="role === 'admin'" mat-raised-button color="primary" (click)="openEditDialog(row)">
-                <mat-icon>settings</mat-icon>
-                Edit Record
-            </button>
-            <button *ngIf="role === 'admin'" mat-icon-button color="warn" aria-label="Delete record" (click)="openDeleteDialog(row)">
-                <mat-icon>delete</mat-icon>
-            </button>
-            <button *ngIf="role === 'admin'" mat-raised-button color="warn" (click)="openDeleteDialog(row)">
-                <mat-icon>delete</mat-icon>
-                Delete Record
-            </button>
-        </td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    <!-- Row shown when there is no matching data. -->
-    <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4">
-            <ng-container *ngIf="filter !== ''"> No data matching the filter "{{ filter }}" </ng-container>
-            <ng-container *ngIf="filter === ''"> No data </ng-container>
-        </td>
-    </tr>
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+    <td mat-cell *matCellDef="let row" data-col="name">{{ row.name }}</td>
+  </ng-container>
+  <!-- Department Column -->
+  <ng-container matColumnDef="department">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Department</th>
+    <td mat-cell *matCellDef="let row" data-col="department">
+      {{ row.department }}
+    </td>
+  </ng-container>
+  <!-- Salary Column -->
+  <ng-container matColumnDef="salary">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Salary</th>
+    <td mat-cell *matCellDef="let row" data-col="salary">{{ row.salary }}</td>
+  </ng-container>
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let row">
+      <button mat-icon-button color="primary" aria-label="View record" (click)="openViewDialog(row)">
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <button mat-raised-button color="primary" (click)="openViewDialog(row)">
+        <mat-icon>visibility</mat-icon>
+        View Record
+      </button>
+      <button *ngIf="role === 'admin'" mat-icon-button color="primary" aria-label="Edit record" (click)="openEditDialog(row)">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <button *ngIf="role === 'admin'" mat-raised-button color="primary" (click)="openEditDialog(row)">
+        <mat-icon>settings</mat-icon>
+        Edit Record
+      </button>
+      <button *ngIf="role === 'admin'" mat-icon-button color="warn" aria-label="Delete record" (click)="openDeleteDialog(row)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button *ngIf="role === 'admin'" mat-raised-button color="warn" (click)="openDeleteDialog(row)">
+        <mat-icon>delete</mat-icon>
+        Delete Record
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  <!-- Row shown when there is no matching data. -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">
+      <ng-container *ngIf="filter !== ''"> No data matching the filter "{{ filter }}" </ng-container>
+      <ng-container *ngIf="filter === ''"> No data </ng-container>
+    </td>
+  </tr>
 </table>
 <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page"> </mat-paginator>

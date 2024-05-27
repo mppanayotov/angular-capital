@@ -1,75 +1,75 @@
 @import 'index';
 
 .footer {
-    padding: 16px 0;
-    background-color: #3f51b5;
-    text-align: center;
+  padding: 16px 0;
+  background-color: #3f51b5;
+  text-align: center;
 
-    @include breakpoint-down(tablet) {
-        padding: 12px 0;
-    }
+  @include breakpoint-down(tablet) {
+    padding: 12px 0;
+  }
+
+  @include breakpoint-down(mobile-medium) {
+    padding-bottom: 58px;
+  }
+
+  h3 {
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
 
     @include breakpoint-down(mobile-medium) {
-        padding-bottom: 58px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 12px;
     }
+  }
+  ul {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
 
-    h3 {
-        font-size: 14px;
-        color: #fff;
-        margin: 0;
+    @include breakpoint-down(mobile-medium) {
+      position: relative;
+      left: auto;
+      transform: none;
+      margin: 0;
+    }
+  }
+  ul > li {
+    color: #fff;
+  }
+  ul > li + li {
+    margin-top: 8px;
+  }
+  ul > li > a {
+    color: #fff;
+    transition: opacity 0.3s ease-out;
+    text-decoration: none;
+  }
+  ul > li > a:hover {
+    opacity: 0.5;
+  }
+  .footer__logo {
+    width: 64px;
+    height: 64px;
+    color: #fff;
+  }
+  .footer__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        @include breakpoint-down(mobile-medium) {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 12px;
-        }
+    @include breakpoint-down(mobile-medium) {
+      justify-content: space-around;
     }
-    ul {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 0 auto;
-        padding: 0;
-        list-style-type: none;
-
-        @include breakpoint-down(mobile-medium) {
-            position: relative;
-            left: auto;
-            transform: none;
-            margin: 0;
-        }
-    }
-    ul > li {
-        color: #fff;
-    }
-    ul > li + li {
-        margin-top: 8px;
-    }
-    ul > li > a {
-        color: #fff;
-        transition: opacity 0.3s ease-out;
-        text-decoration: none;
-    }
-    ul > li > a:hover {
-        opacity: 0.5;
-    }
-    .footer__logo {
-        width: 64px;
-        height: 64px;
-        color: #fff;
-    }
-    .footer__list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        @include breakpoint-down(mobile-medium) {
-            justify-content: space-around;
-        }
-    }
-    mat-icon {
-        vertical-align: middle;
-        margin-right: 8px;
-    }
+  }
+  mat-icon {
+    vertical-align: middle;
+    margin-right: 8px;
+  }
 }

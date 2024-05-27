@@ -2,17 +2,17 @@ import { Component } from '@angular/core';
 import { AuthService } from '@capital/services/auth-service';
 
 @Component({
-    selector: 'capital-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss'],
+  selector: 'capital-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-    role = this.authService.role();
-    expirationTimer$ = this.authService.expirationTimer();
+  role = this.authService.role();
+  expirationTimer$ = this.authService.expirationTimer();
 
-    constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) {}
 
-    logout(): void {
-        this.authService.logout();
-    }
+  logout(): void {
+    this.authService.logout();
+  }
 }

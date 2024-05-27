@@ -1,54 +1,54 @@
 @import 'index';
 
 .record-list-page {
-    padding: 40px 0;
+  padding: 40px 0;
 
-    @include breakpoint-down(mobile) {
-        padding: 24px 0 32px;
-    }
+  @include breakpoint-down(mobile) {
+    padding: 24px 0 32px;
+  }
 
-    .record-list-page__head {
-        display: flex;
-        justify-content: space-between;
+  .record-list-page__head {
+    display: flex;
+    justify-content: space-between;
 
-        @include breakpoint-down(mobile-medium) {
-            display: block;
-        }
+    @include breakpoint-down(mobile-medium) {
+      display: block;
     }
-    button:first-of-type {
-        @include breakpoint-down(mobile-medium) {
-            display: none;
-        }
+  }
+  button:first-of-type {
+    @include breakpoint-down(mobile-medium) {
+      display: none;
     }
-    button + button {
-        display: none;
+  }
+  button + button {
+    display: none;
 
-        @include breakpoint-down(mobile-medium) {
-            display: inline-flex;
-            width: 100%;
-            margin-bottom: 16px;
-        }
+    @include breakpoint-down(mobile-medium) {
+      display: inline-flex;
+      width: 100%;
+      margin-bottom: 16px;
     }
-    mat-form-field {
-        margin-left: auto;
+  }
+  mat-form-field {
+    margin-left: auto;
 
-        @include breakpoint-down(mobile-medium) {
-            margin-left: 0;
-            width: 100%;
-        }
+    @include breakpoint-down(mobile-medium) {
+      margin-left: 0;
+      width: 100%;
     }
+  }
 }
 capital-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 capital-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 50;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
 }

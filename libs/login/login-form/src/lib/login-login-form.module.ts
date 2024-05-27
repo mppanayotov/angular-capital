@@ -9,8 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: [CommonModule, HttpClientModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule, FormsModule, ReactiveFormsModule],
-    declarations: [LoginFormComponent],
-    exports: [LoginFormComponent],
+  imports: [CommonModule, HttpClientModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatIconModule, FormsModule, ReactiveFormsModule],
+  declarations: [LoginFormComponent],
+  exports: [LoginFormComponent],
 })
 export class LoginLoginFormModule {}

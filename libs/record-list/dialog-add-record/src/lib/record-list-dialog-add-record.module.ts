@@ -8,8 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-    imports: [CommonModule, MatFormFieldModule, FormsModule, ReactiveFormsModule, MatDialogModule, MatInputModule, MatButtonModule],
-    declarations: [DialogAddRecordComponent],
-    exports: [DialogAddRecordComponent],
+  imports: [CommonModule, MatFormFieldModule, FormsModule, ReactiveFormsModule, MatDialogModule, MatInputModule, MatButtonModule],
+  declarations: [DialogAddRecordComponent],
+  exports: [DialogAddRecordComponent],
 })
 export class RecordListDialogAddRecordModule {}

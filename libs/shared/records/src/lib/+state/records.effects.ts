@@ -7,16 +7,16 @@ import * as RecordsFeature from './records.reducer';
 
 @Injectable()
 export class RecordsEffects {
-    private actions$ = inject(Actions);
+  private actions$ = inject(Actions);
 
-    init$ = createEffect(() =>
-        this.actions$.pipe(
-            ofType(RecordsActions.initRecords),
-            switchMap(() => of(RecordsActions.loadRecordsSuccess({ records: [] }))),
-            catchError((error) => {
-                console.error('Error', error);
-                return of(RecordsActions.loadRecordsFailure({ error }));
-            })
-        )
-    );
+  init$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(RecordsActions.initRecords),
+      switchMap(() => of(RecordsActions.loadRecordsSuccess({ records: [] }))),
+      catchError((error) => {
+        console.error('Error', error);
+        return of(RecordsActions.loadRecordsFailure({ error }));
+      })
+    )
+  );
 }

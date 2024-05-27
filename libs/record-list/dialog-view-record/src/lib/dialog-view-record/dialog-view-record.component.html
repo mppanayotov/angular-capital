@@ -1,61 +1,61 @@
 <h1 mat-dialog-title>
-    View record
+  View record
 
-    <a
-        mat-icon-button
-        matSuffix
-        [cdkCopyToClipboard]="data.name + '\n' + data.department + '\n' + data.email + '\n' + data.phone + '\n' + data.address + '\n' + data.salary"
-        [matTooltip]="'Copy all data'"
-    >
-        <mat-icon>copy_all</mat-icon>
-    </a>
+  <a
+    mat-icon-button
+    matSuffix
+    [cdkCopyToClipboard]="data.name + '\n' + data.department + '\n' + data.email + '\n' + data.phone + '\n' + data.address + '\n' + data.salary"
+    [matTooltip]="'Copy all data'"
+  >
+    <mat-icon>copy_all</mat-icon>
+  </a>
 </h1>
 <div mat-dialog-content>
-    <form>
-        <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="Name" [value]="data.name" aria-readonly="true" readonly />
-            <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.name" [matTooltip]="'Copy name data'">
-                <mat-icon>content_copy</mat-icon>
-            </a>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Department</mat-label>
-            <input matInput placeholder="Department" [value]="data.department" aria-readonly="true" readonly />
-            <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.department" [matTooltip]="'Copy department data'">
-                <mat-icon>content_copy</mat-icon>
-            </a>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Email" [value]="data.email" aria-readonly="true" readonly />
-            <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.email" [matTooltip]="'Copy email data'">
-                <mat-icon>content_copy</mat-icon>
-            </a>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Phone</mat-label>
-            <input matInput placeholder="Phone" [value]="data.phone" aria-readonly="true" readonly />
-            <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.phone" [matTooltip]="'Copy phone data'">
-                <mat-icon>content_copy</mat-icon>
-            </a>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Address</mat-label>
-            <input matInput placeholder="Address" [value]="data.address" aria-readonly="true" readonly />
-            <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.address" [matTooltip]="'Copy address data'">
-                <mat-icon>content_copy</mat-icon>
-            </a>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Salary</mat-label>
-            <input matInput placeholder="Salary" [value]="data.salary" aria-readonly="true" readonly />
-            <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.salary" [matTooltip]="'Copy salary data'">
-                <mat-icon>content_copy</mat-icon>
-            </a>
-        </mat-form-field>
-    </form>
+  <form>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" [value]="data.name" aria-readonly="true" readonly />
+      <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.name" [matTooltip]="'Copy name data'">
+        <mat-icon>content_copy</mat-icon>
+      </a>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Department</mat-label>
+      <input matInput placeholder="Department" [value]="data.department" aria-readonly="true" readonly />
+      <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.department" [matTooltip]="'Copy department data'">
+        <mat-icon>content_copy</mat-icon>
+      </a>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" [value]="data.email" aria-readonly="true" readonly />
+      <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.email" [matTooltip]="'Copy email data'">
+        <mat-icon>content_copy</mat-icon>
+      </a>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input matInput placeholder="Phone" [value]="data.phone" aria-readonly="true" readonly />
+      <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.phone" [matTooltip]="'Copy phone data'">
+        <mat-icon>content_copy</mat-icon>
+      </a>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Address" [value]="data.address" aria-readonly="true" readonly />
+      <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.address" [matTooltip]="'Copy address data'">
+        <mat-icon>content_copy</mat-icon>
+      </a>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Salary</mat-label>
+      <input matInput placeholder="Salary" [value]="data.salary" aria-readonly="true" readonly />
+      <a mat-icon-button matSuffix [cdkCopyToClipboard]="data.salary" [matTooltip]="'Copy salary data'">
+        <mat-icon>content_copy</mat-icon>
+      </a>
+    </mat-form-field>
+  </form>
 </div>
 <div mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="dialogRef.close()">Close</button>
+  <button mat-raised-button color="primary" (click)="dialogRef.close()">Close</button>
 </div>

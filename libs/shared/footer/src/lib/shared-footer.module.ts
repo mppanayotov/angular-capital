@@ -4,8 +4,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-    imports: [CommonModule, MatIconModule],
-    declarations: [FooterComponent],
-    exports: [FooterComponent],
+  imports: [CommonModule, MatIconModule],
+  declarations: [FooterComponent],
+  exports: [FooterComponent],
 })
 export class SharedFooterModule {}

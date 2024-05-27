@@ -1,92 +1,92 @@
 {
-    "name": "capital",
-    "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "projectType": "application",
-    "prefix": "capital",
-    "sourceRoot": "apps/capital/src",
-    "tags": ["scope:capital", "type:app"],
-    "targets": {
-        "build": {
-            "executor": "@angular-devkit/build-angular:browser",
-            "outputs": ["{options.outputPath}"],
-            "options": {
-                "outputPath": "dist/apps/capital",
-                "index": "apps/capital/src/index.html",
-                "main": "apps/capital/src/main.ts",
-                "polyfills": ["zone.js"],
-                "tsConfig": "apps/capital/tsconfig.app.json",
-                "assets": ["apps/capital/src/favicon.ico", "apps/capital/src/assets"],
-                "styles": ["@angular/material/prebuilt-themes/indigo-pink.css", "apps/capital/src/styles.scss"],
-                "scripts": [],
-                "stylePreprocessorOptions": {
-                    "includePaths": ["libs/shared/styles/src"]
-                }
-            },
-            "configurations": {
-                "production": {
-                    "budgets": [
-                        {
-                            "type": "initial",
-                            "maximumWarning": "1mb",
-                            "maximumError": "2mb"
-                        },
-                        {
-                            "type": "anyComponentStyle",
-                            "maximumWarning": "4kb",
-                            "maximumError": "10kb"
-                        }
-                    ],
-                    "outputHashing": "all"
-                },
-                "development": {
-                    "buildOptimizer": false,
-                    "optimization": false,
-                    "vendorChunk": true,
-                    "extractLicenses": false,
-                    "sourceMap": true,
-                    "namedChunks": true
-                }
-            },
-            "defaultConfiguration": "production"
-        },
-        "serve": {
-            "executor": "@angular-devkit/build-angular:dev-server",
-            "configurations": {
-                "production": {
-                    "buildTarget": "capital:build:production"
-                },
-                "development": {
-                    "buildTarget": "capital:build:development"
-                }
-            },
-            "defaultConfiguration": "development",
-            "options": {
-                "proxyConfig": "apps/capital/proxy.conf.json"
-            }
-        },
-        "extract-i18n": {
-            "executor": "@angular-devkit/build-angular:extract-i18n",
-            "options": {
-                "buildTarget": "capital:build"
-            }
-        },
-        "lint": {
-            "executor": "@nx/eslint:lint",
-            "outputs": ["{options.outputFile}"]
-        },
-        "test": {
-            "executor": "@nx/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-            "options": {
-                "jestConfig": "apps/capital/jest.config.ts"
-            }
-        },
-        "serve-static": {
-            "executor": "@nx/web:file-server",
-            "options": {
-                "buildTarget": "capital:build"
-            }
+  "name": "capital",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "capital",
+  "sourceRoot": "apps/capital/src",
+  "tags": ["scope:capital", "type:app"],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/capital",
+        "index": "apps/capital/src/index.html",
+        "main": "apps/capital/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/capital/tsconfig.app.json",
+        "assets": ["apps/capital/src/favicon.ico", "apps/capital/src/assets"],
+        "styles": ["@angular/material/prebuilt-themes/indigo-pink.css", "apps/capital/src/styles.scss"],
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/shared/styles/src"]
         }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "1mb",
+              "maximumError": "2mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "10kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
     },
-    "implicitDependencies": ["shared-styles"]
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "capital:build:production"
+        },
+        "development": {
+          "buildTarget": "capital:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/capital/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "capital:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/capital/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "capital:build"
+      }
+    }
+  },
+  "implicitDependencies": ["shared-styles"]
 }
