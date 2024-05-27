@@ -1,3 +1,11 @@
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "prettier.printWidth": 160,
+  "prettier.configPath": ".prettierrc",
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.resolveGlobalModules": true,
+  "prettier.singleQuote": true,
+  "prettier.useEditorConfig": true,
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2
 }
