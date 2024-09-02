@@ -1,4 +1,4 @@
-name: Dependabot auto-merge
+ename: Dependabot auto-merge
 on: pull_request
 permissions:
   pull-requests: write
@@ -54,7 +54,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max        
-  dependabot:
+  merge:
     needs: [metadata, build-docker]
     runs-on: ubuntu-latest
     if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'owner/my_repo'
