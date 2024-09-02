@@ -25,7 +25,7 @@
     "@ngrx/router-store": "17.2.0",
     "@ngrx/store": "17.2.0",
     "angular-in-memory-web-api": "^0.17.0",
-    "axios": "1.7.2",
+    "axios": "1.7.7",
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
