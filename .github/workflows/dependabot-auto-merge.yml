@@ -13,9 +13,7 @@ jobs:
       id: dependabot-metadata
       uses: dependabot/fetch-metadata@v2
       with:
-        alert-lookup: true
-        compat-lookup: true
-        github-token: "${{ secrets.PAT_TOKEN }}"
+        github-token: ${{ secrets.GITHUB_TOKEN }}
   build-docker:
     runs-on: ubuntu-latest
     permissions:
