@@ -4,7 +4,7 @@ permissions:
   pull-requests: write
   contents: write
 jobs:
-  build:
+  metadata:
     permissions:
       pull-requests: read
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
       id: dependabot-metadata
       uses: dependabot/fetch-metadata@v2
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: '${{ secrets.GITHUB_TOKEN }}'
   build-docker:
     runs-on: ubuntu-latest
     permissions:
@@ -55,7 +55,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max        
   dependabot:
-    needs: [build, build-docker]
+    needs: [metadata, build-docker]
     runs-on: ubuntu-latest
     if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'owner/my_repo'
     steps:
