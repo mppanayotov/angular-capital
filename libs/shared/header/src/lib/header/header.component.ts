@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '@capital/services/auth-service';
 
 @Component({
-	@@ -7,10 +9,17 @@ import { AuthService } from '@capital/services/auth-service';
+  selector: 'capital-header',
+  templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
