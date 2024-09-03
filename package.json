@@ -68,7 +68,7 @@
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.3.12",
     "@swc/core": "~1.5.7",
-    "@swc/helpers": "~0.5.11",
+    "@swc/helpers": "~0.5.12",
     "@testing-library/react": "16.0.1",
     "@types/express": "4.17.21",
     "@types/jest": "^29.5.12",
