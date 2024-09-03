@@ -46,7 +46,7 @@
     "@angular/cli": "^18.2.2",
     "@angular/compiler-cli": "^17.3.8",
     "@angular/language-service": "^18.2.2",
-    "@ngrx/schematics": "17.2.0",
+    "@ngrx/schematics": "18.0.2",
     "@ngrx/store-devtools": "17.2.0",
     "@nx/angular": "^19.1.0",
     "@nx/cypress": "19.1.0",
