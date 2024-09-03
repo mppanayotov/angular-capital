@@ -1,9 +1,10 @@
 <div class="header mat-elevation-z6">
   <nav>
     <mat-toolbar color="primary">
-      <button mat-icon-button aria-label="Example icon-button with menu icon">
+      <button (click)="sidenav.toggle()" mat-icon-button aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
+
       <h2>Capital</h2>
       <h3 *ngIf="expirationTimer$ | async as timer"><span>Session expires in: </span>{{ timer }}</h3>
       <button mat-raised-button color="primary" (click)="logout()" aria-label="Logout icon-button with logout icon">
@@ -11,5 +12,15 @@
         Logout
       </button>
     </mat-toolbar>
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav mode="push" [(opened)]="opened" [fixedInViewport]="true" [fixedTopGap]="64" [fixedBottomGap]="96">
+        <mat-nav-list>
+          <a mat-list-item href="/record-list" [activated]="setActiveLink('/record-list')">Record list</a>
+          <a mat-list-item href="/link-2" [activated]="setActiveLink('/link-2')">Link 2</a>
+          <a mat-list-item href="/link-3" [activated]="setActiveLink('/link-3')">Link 3</a>
+          <a mat-list-item href="/link-4" [activated]="setActiveLink('/link-4')">Link 4</a>
+        </mat-nav-list>
+      </mat-sidenav>
+    </mat-sidenav-container>
   </nav>
 </div>
