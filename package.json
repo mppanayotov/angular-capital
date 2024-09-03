@@ -60,7 +60,7 @@
     "@nx/node": "19.1.0",
     "@nx/nuxt": "^19.1.0",
     "@nx/playwright": "^19.6.4",
-    "@nx/web": "19.1.0",
+    "@nx/web": "19.6.4",
     "@nx/webpack": "19.1.0",
     "@nx/workspace": "19.1.0",
     "@playwright/test": "^1.36.0",
