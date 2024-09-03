@@ -48,7 +48,7 @@
     "@angular/language-service": "^18.2.2",
     "@ngrx/schematics": "17.2.0",
     "@ngrx/store-devtools": "17.2.0",
-    "@nx/angular": "^19.1.0",
+    "@nx/angular": "^19.6.4",
     "@nx/cypress": "19.1.0",
     "@nx/devkit": "19.6.4",
     "@nx/eslint": "19.1.0",
