@@ -24,6 +24,12 @@ h3 span {
 button:not(:first-of-type) {
   margin-left: auto;
 }
+mat-sidenav {
+  width: 300px;
+}
+::ng-deep mat-sidenav .mdc-list-item--activated {
+  background-color: rgba(63, 81, 181, 0.2) !important;
+}
 @keyframes fade-in {
   0% {
     opacity: 0;
