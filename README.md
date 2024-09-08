@@ -15,7 +15,7 @@
   - [Ready to deploy?](#ready-to-deploy)
   - [Set up CI!](#set-up-ci)
   - [Connect with us!](#connect-with-us)
-
+ 
 # Nx Graph
 
 <img src="graph.jpg">
