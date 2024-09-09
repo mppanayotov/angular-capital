@@ -45,6 +45,11 @@
     },
     "build-custom-server": {
       "cache": true
+    },
+    "e2e-ci--**/*": {
+      "dependsOn": [
+        "^build"
+      ]
     }
   },
   "namedInputs": {
