@@ -49,7 +49,7 @@
     "@ngrx/schematics": "18.0.2",
     "@ngrx/store-devtools": "18.0.2",
     "@nx/angular": "19.6.5",
-    "@nx/cypress": "19.6.5",
+    "@nx/cypress": "19.7.3",
     "@nx/devkit": "19.6.5",
     "@nx/eslint": "19.6.5",
     "@nx/eslint-plugin": "19.6.5",
