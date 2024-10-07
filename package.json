@@ -51,7 +51,7 @@
     "@nx/angular": "20.0.0",
     "@nx/cypress": "20.0.0",
     "@nx/devkit": "20.0.0",
-    "@nx/eslint": "19.8.2",
+    "@nx/eslint": "20.0.0",
     "@nx/eslint-plugin": "19.8.2",
     "@nx/express": "19.8.2",
     "@nx/jest": "19.8.2",
