@@ -59,7 +59,7 @@
     "@nx/next": "19.8.2",
     "@nx/node": "19.8.0",
     "@nx/nuxt": "20.0.0",
-    "@nx/playwright": "19.8.2",
+    "@nx/playwright": "20.0.0",
     "@nx/web": "20.0.0",
     "@nx/webpack": "20.0.0",
     "@nx/workspace": "20.0.0",
