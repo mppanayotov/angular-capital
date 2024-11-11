@@ -50,7 +50,7 @@
     "@ngrx/store-devtools": "18.0.2",
     "@nx/angular": "20.0.8",
     "@nx/cypress": "20.0.8",
-    "@nx/devkit": "20.0.8",
+    "@nx/devkit": "20.0.13",
     "@nx/eslint": "20.0.8",
     "@nx/eslint-plugin": "20.0.0",
     "@nx/express": "20.0.6",
