@@ -61,7 +61,7 @@
     "@nx/nuxt": "20.0.8",
     "@nx/playwright": "20.0.8",
     "@nx/web": "20.0.6",
-    "@nx/webpack": "20.0.8",
+    "@nx/webpack": "20.0.13",
     "@nx/workspace": "20.0.8",
     "@playwright/test": "^1.48.2",
     "@schematics/angular": "^18.2.11",
