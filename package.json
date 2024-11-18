@@ -44,7 +44,7 @@
     "@angular-eslint/eslint-plugin-template": "18.4.0",
     "@angular-eslint/template-parser": "18.4.0",
     "@angular/cli": "^18.2.12",
-    "@angular/compiler-cli": "^18.2.3",
+    "@angular/compiler-cli": "^18.2.12",
     "@angular/language-service": "^18.2.12",
     "@ngrx/schematics": "18.1.1",
     "@ngrx/store-devtools": "18.0.2",
