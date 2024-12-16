@@ -52,7 +52,7 @@
     "@nx/cypress": "20.2.1",
     "@nx/devkit": "20.2.1",
     "@nx/eslint": "20.2.1",
-    "@nx/eslint-plugin": "20.2.1",
+    "@nx/eslint-plugin": "20.2.2",
     "@nx/express": "20.2.1",
     "@nx/jest": "20.2.1",
     "@nx/js": "20.1.3",
