@@ -45,7 +45,7 @@
     "@angular-eslint/template-parser": "19.0.2",
     "@angular/cli": "^19.1.5",
     "@angular/compiler-cli": "^18.2.3",
-    "@angular/language-service": "^19.1.2",
+    "@angular/language-service": "^19.1.4",
     "@ngrx/schematics": "19.0.0",
     "@ngrx/store-devtools": "18.0.2",
     "@nx/angular": "20.3.1",
