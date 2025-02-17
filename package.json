@@ -53,7 +53,7 @@
     "@nx/devkit": "20.4.0",
     "@nx/eslint": "20.3.2",
     "@nx/eslint-plugin": "20.4.0",
-    "@nx/express": "20.3.2",
+    "@nx/express": "20.4.4",
     "@nx/jest": "20.4.0",
     "@nx/js": "20.3.2",
     "@nx/next": "20.4.2",
