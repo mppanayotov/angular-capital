@@ -23,7 +23,7 @@
     "@ngrx/effects": "18.0.2",
     "@ngrx/entity": "18.0.2",
     "@ngrx/router-store": "18.0.2",
-    "@ngrx/store": "18.0.2",
+    "@ngrx/store": "19.0.1",
     "angular-in-memory-web-api": "^0.18.0",
     "axios": "1.7.9",
     "body-parser": "^1.20.2",
