@@ -21,7 +21,7 @@
     "@angular/router": "^18.2.3",
     "@ngrx/component-store": "18.1.1",
     "@ngrx/effects": "18.0.2",
-    "@ngrx/entity": "18.0.2",
+    "@ngrx/entity": "19.2.1",
     "@ngrx/router-store": "18.0.2",
     "@ngrx/store": "18.0.2",
     "angular-in-memory-web-api": "^0.18.0",
