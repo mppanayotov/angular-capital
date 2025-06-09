@@ -76,7 +76,7 @@
     "@types/node": "22.10.6",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
     "@typescript-eslint/parser": "^7.0.0",
     "@typescript-eslint/utils": "^8.32.1",
     "babel-jest": "29.7.0",
